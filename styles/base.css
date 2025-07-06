@@ -1,0 +1,201 @@
+
+
+/* ------------Color Schemes --------------*/
+/* #6CCFF6 Pale azure */
+/* #F4E8C1 Dutch white */
+/* #817F75 Battleship gray */
+/* #011936 Oxford blue */
+
+
+/* ------------Fonts------------ */
+/*   font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; */
+
+/*  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; */
+
+/* Design Practices 
+1. Appropriate proximity, alignment, repetition, and contrast design principles are used.
+2. There is no horizontal scrolling in views between 320px to 1200px wide.
+3. Text does not touch the edge of the screen causing a visual tangent error.
+4. Any text overlays on images, other elements, or other text/content is legible and does not overflow in smaller views.
+5. That there is no twitching in the navigation on hover.
+6. Images are not squished nor distorted as the page is resized.
+7. Images are not oversized causing pixelation. */
+
+/* -----------------------------------------SITE WIDE-----------------------------------------------*/
+* {
+    font-family: "Monteserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* -----------------------------------------HEADER-----------------------------------------------*/
+header {
+    display: grid;
+    grid-template-columns: 30px auto 44px;
+    padding: 5px 0 5px 10px;
+    align-items: end;
+    column-gap: 8px;
+    background-color: #F4E8C1;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+header span {
+    font-size: 2rem;
+    color: #011936;
+}
+
+/* -----------------------------------------HAMBURGER-----------------------------------------------*/
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #011936;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hamburger::before {
+    content: "\2630";
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+}
+
+/*--------------NAVIGATION------------ */
+
+.navigation {
+    display: none;
+}
+
+.navigation.show {
+    display: block;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    display: block;
+    padding: .8rem 10px;
+    color: #011936;
+    text-decoration: none;
+    border-bottom: solid 1px #6CCFF6;
+}
+
+.navigation li.current {
+    background-color: rgb(129, 127, 117, 0.3);
+}
+
+.navigation a:hover {
+    background-color: #6CCFF6;
+}
+
+h1 {
+    margin-left: 10px;
+    font-size: 1.7rem;
+    display: grid;
+    justify-content: center;
+}
+
+h2 {
+    padding: 10px;
+    border: solid 1px #6CCFF6;
+    background-color: #6CCFF6;
+    border-radius: 10px;
+}
+
+
+/* ---------------- FOOTER ---------------*/
+footer {
+    background-color: #F4E8C1;
+    padding: 1rem 10px;
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 9px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #6CCFF6 solid 1px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.social img {
+    width: 45px;
+    height: 45px;
+}
+
+.social a:hover {
+    background-color: #6CCFF6;
+}
+
+.certificate-title {
+    font-size: 1.2rem;
+    display: grid;
+    justify-content: center;
+}
+
+
+button {
+    font-family: "Caveat", cursive;
+    background-color: #011936;
+    border: #011936;
+    border-radius: 10px;
+    color: #F4E8C1;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    background-color: #6CCFF6;
+    color: #011936;
+    border: #6CCFF6;
+    cursor: pointer;
+}
+
+.course-filter {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.total-credits {
+    display: grid;
+    justify-items: center;
+    padding-top: 20px;
+    font-style: italic;
+}
+
+footer p {
+    font-size: 0.8rem;
+}
