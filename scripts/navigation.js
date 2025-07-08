@@ -14,7 +14,9 @@ const currentYear = date.getFullYear();
 document.getElementById("currentYear").innerHTML = currentYear;
 
 const lastModified = new Date(document.lastModified);
-document.getElementById("lastModified").innerHTML = lastModified.toLocaleDateString();
+document.getElementById("lastModified").innerHTML = lastModified.toLocaleString([], {
+    hour12: false
+});
 
 
 // --------------------------------------- List of course information --------------------------------------------------- //
@@ -133,7 +135,7 @@ function createCourseCard(filteredCourses) {
         grid.appendChild(card);
         // Update the course credits total
     const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-    document.getElementById("courseCredits").textContent = `The total number of credit hours from courses listed below is ${totalCredits}`;
+    document.getElementById("courseCredits").textContent = `The total credits from courses listed above is ${totalCredits}.`;
     });
 
 }

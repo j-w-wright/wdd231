@@ -1,4 +1,4 @@
-@media only screen and (min-width: 38rem) {
+@media only screen and (min-width: 40rem) {
 
 header, main, nav, footer {
     max-width: 900px;
@@ -24,6 +24,26 @@ header {
 
 .navigation a {
     border: none;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    column-gap: 10px;
+}
+
+.about-photo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+.about-photo section {
+    margin: 0;
+    padding: 0;
 }
 
 }
