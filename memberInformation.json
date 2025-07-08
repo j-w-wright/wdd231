@@ -1,0 +1,18 @@
+{
+    "family_name": "Wright",
+    "move_in_date": "2013-11-17",
+    "number_of_people": 6,
+    "visited_by_bishopric": true,
+    "family_members": [
+        {
+            "name": "Jared",
+            "gender": "Male",
+            "birthdate": "1976-05-20"
+        },
+        {
+            "name": "Chersten",
+            "gender": "Female",
+            "birthdate": "1979-11-01"
+        }
+    ]
+}

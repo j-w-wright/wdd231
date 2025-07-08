@@ -1,0 +1,47 @@
+.grid {
+	display: grid;
+	grid-gap: 0.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+section {
+        background-color: rgb(163, 155, 245, 0.4);
+        text-align: center;
+        border-radius: 10px;
+}
+
+footer {
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+    border-top: solid 3px #eee;
+}
+
+header {
+    border-bottom: solid 3px #eee;
+}
+
+h1 {
+    color: rgb(68, 3, 103);
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+h2 {
+    color: rgb(68, 3, 103);
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+img {
+    border-radius: 10px;
+}
