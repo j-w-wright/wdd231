@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Directory of the Brigham City Chamber of Commerce</title>
+        <meta name="description" content="The directory page for the Brigham City Chamber of Commerce">
+        <meta name="author" content="Jared Wright">
+        
+        <!--Open Graph Meta Tags for Facebook-->
+        <meta property="og:title" content="The Directory of the Brigham City Chamber of Commerce">
+        <meta property="og:description" content="#">
+        <meta property="og:image" content="#">
+        <meta property="og:url" content="#">
+
+        <link rel="icon" href="favicon.ico"> <!--Need to create this-->
+
+        <!--CSS file - Style Sheets-->
+        <link rel="stylesheet" href="styles/base.css">
+        <link rel="stylesheet" href="styles/larger.css">
+
+        <!--CSS file - Font Styles-->
+
+
+        <!--Javascript file-->
+
+
+    </head>
+    <body>
+        <header>
+            <img src="#" alt="site logo" width="1" height="1">
+            <span>Brigham City Chamber of Commerce</span>
+            <button id="ham-btn" class="hamburger" aria-label="Open navigation menu"></button>
+        </header>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li class="current"><a href="#">Home</a></li> <!--How do I accurately use "current" always for the implementation of Wayfinding?-->
+                <li class="current"><a href="#">Directory</a></li>
+                <li class="current"><a href="#">Join</a></li>
+                <li class="current"><a href="#">Discover</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1 class="members">Directory of Members</h1>
+            <div id="member-filter" class="member-filter">
+                <button id="card">Card View</button>
+                <button id="list">List View</button>
+            </div>
+            <div class="directory-grid"></div> <!--Use Javascript to display the list of members-->
+        </main>
+        <footer>
+        <!--Physical Address of the Chamber of Commerce-->
+            <div class="physical-address">
+                <p class="commerce-name">Brigham City Chamber of Commerce</p>
+                <p>6 North Main Street, Brigham City, UT 84302</p>
+                <p>435.723.XXXX</p>
+                <p>firstname@boxelderchamber.com</p>
+            </div>
+        <!--Social Media Icons and Links-->
+            <div class="social">
+                <a href="#" target="_blank">
+                    <img src="" alt="" width="">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="" alt="" width="">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="" alt="" width="">
+                </a>              
+            </div>
+        <!--Course number, Project name, and Student name-->
+            <div class="student">
+                <p>WDD 231 Chamber Project</p>
+                <p>Jared Wright</p>
+            </div>
+            <div class="copyright">
+        <!--Copyright and Last Modified-->
+                <p>&#169; <span id="currentYear"></span> | Brigham City Chamber of Commerce </p>
+                <p>Last modified: <span id="lastModified"></span></p> <!--will be populated dynamically with JavaScript-->
+            </div>
+        </footer>
+    </body>
+</html>
