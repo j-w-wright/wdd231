@@ -36,9 +36,9 @@ header {
 .about-photo {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    gap: 10px;
     align-items: start;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
 }
 
 .about-photo section {
