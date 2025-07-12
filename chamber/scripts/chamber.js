@@ -18,55 +18,97 @@ navbutton.addEventListener('click', () => {
 });
 
 
-const url = 'data/memberinformation.json';
-
+const url = './data/memberinformation.json';
 const cards = document.querySelector('#cards');
+let memberData = [];
+
+function sortMembersByLevel(members) {
+    const order = { "Gold": 1, "Silver": 2, "Member": 3 };
+    return members.slice().sort((a, b) => {
+        return (order[a.membership_level] || 99) - (order[b.membership_level] || 99);
+    });
+}
 
 // --------------------- Async/Await --------------------------- //
 async function getMemberData () {
    try{
         const response = await fetch(url);
         const data = await response.json();
-        displayMembers(data);
+        memberData = data; //important to make sure to include this so the array is populated.
+        const sortedMembers = sortMembersByLevel(memberData);
+        displayMembers(sortedMembers, "card");
     } catch (error) {
         console.error("Fetch error: ", error);
     }
 }
 
-// --------------------- Member Card --------------------------- //
-    // Each entry includes name, address, phone number, website URL, image or icon file name, membership level
-    // Membership levels 1=member, 2=silver, 3=gold
-
-const displayMembers = (members) => {
+const displayMembers = (members, view = "card") => {
+    cards.innerHTML = "";
+    cards.className = view === "card" ? "cards" : "list";
     members.forEach((member) => {
         let card = document.createElement("section");
         let name = document.createElement("h2");
+
+        // Container with img and information
+        let infoRow = document.createElement("div");
+        infoRow.className = "card-info-row";
+
+        //let image = document.createElement("img");
         let address = document.createElement("p");
         let phone = document.createElement("p");
-        let image = document.createElement("img");
-        let website = document.createElement("#");
         let membership_level = document.createElement("p");
+        let website = document.createElement("a");
+        
 
-        name.textContent = `${member.name}`;
+        name.textContent = member.name;
         address.textContent = `Address: ${member.address}`;
         phone.textContent = `Phone: ${member.phone}`;
         membership_level.textContent = `Membership Level: ${member.membership_level}`;
-        website.setAttribute("src", member.website_url);
+        website.href = member.website_url;
+        website.textContent = "Visit Website";
+        website.target = "_blank";
 
-        image.setAttribute("src", image.image);
-        image.setAttribute("alt", `Logo of ${member.name}`);
-        image.setAttribute("loading", "lazy");
-        image.setAttribute("width", "340");
-        image.setAttribute("height", "440");
+        // Only create and append image in the card view
+        if (view === "card") {
+            let image = document.createElement("img");
+            image.setAttribute("src", member.image);
+            image.setAttribute("alt", `Logo of ${member.name}`);
+            image.setAttribute("loading", "lazy");
+            image.setAttribute("width", "");
+            image.setAttribute("height", "");
+            infoRow.appendChild(image);
+        }
+
+
+        let infoCol = document.createElement("div");
+        infoCol.className = "card-info-col";
+        infoCol.appendChild(address);
+        infoCol.appendChild(phone);
+        infoCol.appendChild(membership_level);
+        infoCol.appendChild(website);
+
+        infoRow.appendChild(infoCol);
 
         card.appendChild(name);
-        card.appendChild(address);
-        card.appendChild(phone);
-        card.appendChild(membership_level);
-
+        card.appendChild(infoRow);
+        
+        //card.appendChild(name);
+        //card.appendChild(address);
+        //card.appendChild(phone);
+        //card.appendChild(membership_level);
+        //card.appendChild(website);
 
         cards.appendChild(card);
-    })
-}
+    });
+};
+
+document.querySelector("#card").addEventListener("click", () => {
+    const sortedMembers = sortMembersByLevel(memberData);
+    displayMembers(sortedMembers, "card");
+});
+document.querySelector("#list").addEventListener("click", () => {
+    const sortedMembers = sortMembersByLevel(memberData);
+    displayMembers(sortedMembers, "list");
+});
 
 getMemberData();

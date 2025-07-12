@@ -1,0 +1,47 @@
+@media only screen and (min-width: 50rem) {
+
+header, main, nav, footer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    grid-template-columns: 65px auto;
+}
+
+.hamburger {
+    display: none;
+}
+
+.navigation {
+    display: block;
+    background-color: rgb(159, 160, 150, .5);
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navigation a {
+    border: none;
+}
+
+header span {
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    column-gap: 25px;
+}
+
+}

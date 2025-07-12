@@ -1,11 +1,234 @@
 
 /* ------------ Color Scheme ------------ */
 /* CSS HEX */
-/* --dark-moss-green: #3f5a2dff;
---jet: #3e3836ff;
---ash-gray: #9fa096ff;
---indigo-dye: #2a455eff;
---prussian-blue: #23324bff; */
+/* --dark-moss-green: #3f5a2d;
+--jet: #3e3836;
+--ash-gray: #9fa096;
+--: #0580f3
+--prussian-blue: #23324b; */
 
 
 /* ------------ Font/Typography --------- */
+/* Caveat */
+/* Montserrat */
+
+/* -----------------------------------------SITE WIDE-----------------------------------------------*/
+* {
+    font-family: "Monteserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* -----------------------------------------HEADER-----------------------------------------------*/
+header {
+    display: grid;
+    grid-template-columns: 70px auto 50px;
+    padding: 5px 0 10px 10px;
+    align-items: end;
+    column-gap: 20px;
+    background-color: rgb(159, 160, 150, .5);
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+header span {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    color: #23324b; 
+}
+
+/* ------------HAMBURGER-------------*/
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #23324b;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hamburger::before {
+    content: "\2630";
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+}
+
+/*--------------NAVIGATION------------ */
+
+.navigation {
+    display: none;
+}
+
+.navigation.show {
+    display: block;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    display: block;
+    padding: .8rem;
+    color: #23324b;
+    text-decoration: none;
+}
+
+.navigation li.current {
+    background-color: rgb(159, 160, 150,);
+}
+
+.navigation a:hover {
+    background-color: #0580f3;
+    border-radius: 5px;
+
+}
+
+/* ----------------- BODY ------------------*/
+
+h1 {
+    margin-left: 10px;
+    font-size: 1.5rem;
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    border-radius: 5px;
+}
+
+/* ----------Filtering Buttons-------------*/
+
+.member-filter {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: stretch;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.cards section {
+    margin-bottom: 30px;
+}
+
+.cards h2 {
+    text-align: center;
+    border-bottom: solid 1px #9fa096;
+}
+
+.card-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-info-row img {
+    flex-shrink: 0;
+    width: 100px;
+    height: auto;
+}
+
+.card-info-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card-info-col p, .card-info-col a {
+    margin: 5px;
+}
+
+button {
+    font-family: "Caveat", cursive;
+    background-color:  #3f5a2d;
+    border:  #3f5a2d;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    background-color: #0580f3;
+    cursor: pointer;
+}
+
+.list section{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.list h2 {
+   text-align: center;
+    margin: 5px;
+}
+
+/* ---------------- FOOTER ---------------*/
+footer {
+    padding: 1rem 10px;
+    text-align: center;
+}
+
+.physical-address {
+    border-top: solid 3px #9fa096;
+}
+
+.commerce-name {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.physical-address p {
+    margin: 5px;
+    color: #011936;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    padding: 10px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+}
+
+
+/*
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+} */
+
+.copyright, .student {
+    font-size: 0.8rem;
+    color:  #23324b;
+    background-color: rgb(159, 160, 150, .5);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

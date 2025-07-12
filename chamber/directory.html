@@ -32,7 +32,7 @@
     </head>
     <body>
         <header>
-            <img src="#" alt="site logo" width="1" height="1">
+            <img src="images/Box-Elder-Chamber-Logo-Outlined-212x200-1.png" alt="site logo" width="45" height="45">
             <span>Brigham City Chamber of Commerce</span>
             <button id="ham-btn" class="hamburger" aria-label="Open navigation menu"></button>
         </header>
@@ -45,12 +45,12 @@
             </ul>
         </nav>
         <main>
-            <h1 class="members">Directory of Members</h1>
+            <h1 class="directory-title">Directory of Members</h1>
             <div id="member-filter" class="member-filter">
                 <button id="card">Card View</button>
                 <button id="list">List View</button>
             </div>
-            <div class="directory-grid"></div> <!--Use Javascript to display the list of members-->
+            <div id="cards" class="cards"></div> <!--Use Javascript to display the list of members-->
         </main>
         <footer>
         <!--Physical Address of the Chamber of Commerce-->
@@ -65,19 +65,15 @@
                 <a href="https://www.youtube.com/" target="_blank">
                     <img src="images/youtube.svg" alt="Youtube" width="45">
                 </a>
-                <a href="#" target="_blank">
-                    <img src="" alt="" width="">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="images/facebook.svg" alt="Facebook" width="40">
                 </a>
-                <a href="#" target="_blank">
-                    <img src="" alt="" width="">
+                <a href="https://www.x.com" target="_blank">
+                    <img src="images/twitter_x.svg" alt="X, formerly Twitter" width="70">
                 </a>              
             </div>
-        <!--Course number, Project name, and Student name-->
-            <div class="student">
-                <p>WDD 231 Chamber Project</p>
-                <p>Jared Wright</p>
-            </div>
             <div class="copyright">
+                <p>WDD 231 Chamber Project | Jared Wright</p>
         <!--Copyright and Last Modified-->
                 <p>&#169; <span id="currentYear"></span> | Brigham City Chamber of Commerce </p>
                 <p>Last modified: <span id="lastModified"></span></p> <!--will be populated dynamically with JavaScript-->
