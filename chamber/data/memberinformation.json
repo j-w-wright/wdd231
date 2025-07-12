@@ -1,0 +1,58 @@
+[
+{
+    "name": "Big O Tires",
+    "address": "390 South Main Street, Brigham City, Utah 84302",
+    "phone": "435-465-2093",
+    "website_url": "https://www.bigotires.com",
+    "image": "",
+    "membership_level": "member"
+},
+{
+    "name": "Hampton Inn",
+    "address": "40 North Main Street, Brigham City, Utah, 84302",
+    "phone": "435-538-7080",
+    "website_url": "https://www.hilton.com/en/hotels/bmcnmhx-hampton-brigham-city/",
+    "image": "",
+    "membership_level": "gold"
+},
+{
+    "name": "Box Elder School District",
+    "address": "960 South Main Street, Brigham City, Utah, 84302",
+    "phone": "435-734-4800",
+    "website_url": "https://www.besd.net/",
+    "image": "",
+    "membership_level": "member"
+},
+{
+    "name": "Brigham City Community Hospital",
+    "address": "950 Medical Drive, Brigham City, Utah, 84302",
+    "phone": "435-734-9471",
+    "website_url": "https://www.mountainstar.com/locations/brigham-city-community-hospital",
+    "image": "",
+    "membership_level": "silver"
+},
+{
+    "name": "Loves Truck Stop",
+    "address": "20 South 1550 West, Brigham City, Utah, 84302",
+    "phone": "435-723-0223",
+    "website_url": "https://www.loves.com/",
+    "image": "",
+    "membership_level": "gold"
+},
+{
+    "name": "Burgers 'n Scoops",
+    "address": "808 South Main Street, Brigham City, Utah 84302",
+    "phone": "435-723-8500",
+    "website_url": "",
+    "image": "",
+    "membership_level": "silver"
+},
+{
+    "name": "Kent's Market",
+    "address": "260 North Main Street, Brigham City, Utah 84302",
+    "phone": "435-734-9565",
+    "website_url": "https://www.kentsgrocery.com/",
+    "image": "",
+    "membership_level": "silver"
+}
+]
