@@ -84,7 +84,12 @@ header span {
 }
 
 .navigation li.current {
-    background-color: rgb(159, 160, 150,);
+    background-color: #9fa096;
+    border-radius: 5px;
+}
+
+.navigation li.current a {
+    color: white;
 }
 
 .navigation a:hover {
