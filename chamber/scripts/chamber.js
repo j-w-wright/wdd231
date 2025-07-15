@@ -74,8 +74,8 @@ const displayMembers = (members, view = "card") => {
             image.setAttribute("src", member.image);
             image.setAttribute("alt", `Logo of ${member.name}`);
             image.setAttribute("loading", "lazy");
-            image.setAttribute("width", "");
-            image.setAttribute("height", "");
+            image.setAttribute("width", "100");
+            image.setAttribute("height", "auto");
             infoRow.appendChild(image);
         }
 
