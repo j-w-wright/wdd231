@@ -27,14 +27,14 @@
 6. Images are not squished nor distorted as the page is resized.
 7. Images are not oversized causing pixelation. */
 
-/* -----------------------------------------SITE WIDE-----------------------------------------------*/
+/* ---------SITE WIDE-------- */
 * {
     font-family: "Monteserrat", sans-serif;
     box-sizing: border-box;
 }
 
 
-/* -----------------------------------------HEADER-----------------------------------------------*/
+/* ----------HEADER---------- */
 header {
     display: grid;
     grid-template-columns: 30px auto 44px;
@@ -56,7 +56,7 @@ header span {
     color: #011936;
 }
 
-/* -----------------------------------------HAMBURGER-----------------------------------------------*/
+/* ---------HAMBURGER--------- */
 .hamburger {
     background: none;
     border: none;
@@ -74,8 +74,7 @@ header span {
     content: "\00D7";
 }
 
-/*--------------NAVIGATION------------ */
-
+/* ---------NAVIGATION------- */
 .navigation {
     display: none;
 }
@@ -106,12 +105,40 @@ header span {
     background-color: #6CCFF6;
 }
 
-/* ----------------- BODY ------------------*/
-
+/* -------- BODY -------- */
 h1 {
     margin-left: 10px;
     font-size: 1.7rem;
     display: grid;
+}
+
+/* ---- HERO SECTION----- */
+.hero-container {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.hero-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-container button {
+    position: absolute;
+    bottom: 20px;
+    left: 75%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.current-events {
+    border: solid 1px orange;
+    background-color: yellow;
+}
+.weather {
+    border: solid 1px orange;
 }
 
 h2 {

@@ -45,18 +45,20 @@
             </ul>
         </nav>
         <main>
-            <div class="hero1">
-                <img src="images/hero1.jpg" alt="Brigham City Main Street sign">
+            <div class="hero-container"> <!--Hero-->
+                <img src="images/hero1.jpg" alt="Brigham City Main Street sign" width="100%">
+                <button onclick="location.href='call_to_action.html'">20XX Conference Information and Tickets</button>
             </div>
-            <button onclick="location.href='call_to_action.html'">20XX Conference Information and Tickets</button>
-            <section> <!--Current Events-->
-
+            <section class="current-events"> <!--Current Events-->
+                <h2>Current Events</h2>
             </section>
-            <section> <!--Weather-->
+            <section class="weather"> <!--Weather-->
+                <h2>Weather</h2>
                 <div id="openweathermap-widget-2"></div>
                 <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 2,cityid: '5771960',appid: '692bd7103849f20085cd57cde936564f',units: 'imperial',containerid: 'openweathermap-widget-2',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
             </section> 
             <section> <!--Company Spotlights-->
+                <h2>Company Highlights</h2>
 
             </section>
         </main>
