@@ -1,0 +1,29 @@
+Week 4: Project Subject
+
+Week 5: Project Site Plan and Build
+
+Week 6: Project Build
+
+
+Course Learning Outcomes
+1. Develop dynamic websites that use valid HTML and CSS that follow best practices of accessibility and compliance.
+2. Create dynamic web sites that leverage browser APIs, JSON, and remote APIs.
+3. Use industry tools to monitor performance and to optimize the user experience.
+4. Demonstrate the traits of an effective team member (such as clear communication, collaboration, fulfilling assignments, and meeting deadlines).
+
+
+Week 4
+Subject: Fast Food Restaurant
+Description: A website for the restaurant that includes pages for Home, Menu, Deals, Careers, and Gift Cards.  Also, provide the inclusion of an option to order online and have orders delivered online.
+Reason & Purpose: There is a fast food restaurant in town that my daughter just began working for and the owner is in my ward.  I noticed that the restaurant doesn't have a website and thought this would give me a good opportunity to work on creating a site for a business that is already in business.  I could also get feedback from my daughter who will have particular insights regarding the restaurant.  
+
+
+Week 5
+* Color Scheme
+* Fonts
+* Pages
+    * Home
+    * Menu
+    * Deals 
+    * Careers
+    * Gift Cards

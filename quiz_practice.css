@@ -1,0 +1,17 @@
+.parent > p {
+    border: solid 1px orange;
+}
+
+/*
+.parent ~ p {
+    border: solid 1px orange;
+}
+
+.parent + p {
+    border: solid 1px orange;
+}
+
+.parent p {
+    border: solid 1px orange;
+}
+*/

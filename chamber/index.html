@@ -49,17 +49,31 @@
                 <img src="images/hero1.jpg" alt="Brigham City Main Street sign" width="100%">
                 <button onclick="location.href='call_to_action.html'">20XX Conference Information and Tickets</button>
             </div>
-            <section class="current-events"> <!--Current Events-->
-                <h2>Current Events</h2>
-            </section>
-            <section class="weather"> <!--Weather-->
-                <h2>Weather</h2>
-                <div id="openweathermap-widget-2"></div>
-                <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 2,cityid: '5771960',appid: '692bd7103849f20085cd57cde936564f',units: 'imperial',containerid: 'openweathermap-widget-2',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
-            </section> 
-            <section> <!--Company Spotlights-->
-                <h2>Company Highlights</h2>
-
+            <div class="event-weather">
+                <section class="current-events"> <!--Current Events-->
+                    <h2>Current Events</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia quasi delectus explicabo error autem, eveniet praesentium dolor ex fuga corporis ad deleniti maiores amet ipsa tempore dolore illo itaque et? Placeat, distinctio dolore.
+                    </p>
+                </section>
+                <section class="weather-current"> <!--Weather-->
+                    <h2>Current Weather</h2>
+                    <div class="weather-card">
+                        <h2 id="town"></h2>
+                        <img id="graphic" src="" alt="">
+                        <p id="description"></p>
+                        <p id="temperature"></p>
+                    </div>
+                    <
+                </section>
+                <section class="weather-forcast">
+                    <h2>Weather Forecast</h2>
+                </section>
+            </div> 
+            <section class="company-highlight"> <!--Company Spotlights-->
+                <p>COMPANY HIGHLIGHT SECTION REMOVE</p>
+                <div id="cards" class="cards">
+                    <!--Spotlight cards will be dynamically generated here by JavaScript-->
+                </div>
             </section>
         </main>
         <footer>

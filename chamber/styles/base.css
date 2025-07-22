@@ -1,5 +1,5 @@
 
-/* ------------ Color Scheme ------------ */
+/* ---------Color Scheme--------- */
 /* CSS HEX */
 /* --dark-moss-green: #3f5a2d;
 --jet: #3e3836;
@@ -8,25 +8,25 @@
 --prussian-blue: #23324b; */
 
 
-/* ------------ Font/Typography --------- */
+/* ---------Font/Typography--------- */
 /* Caveat */
 /* Montserrat */
 
-/* -----------------------------------------SITE WIDE-----------------------------------------------*/
+/* ---------SITE WIDE----------*/
 * {
     font-family: "Monteserrat", sans-serif;
     box-sizing: border-box;
 }
 
 
-/* -----------------------------------------HEADER-----------------------------------------------*/
+/* ----------HEADER-------------*/
 header {
     display: grid;
     grid-template-columns: 70px auto 50px;
     padding: 5px 0 10px 10px;
     align-items: end;
     column-gap: 20px;
-    background-color: rgb(159, 160, 150, .5);
+    background-color: rgb(159, 160, 150, 0.5);
 }
 
 header img {
@@ -42,7 +42,7 @@ header span {
     color: #23324b; 
 }
 
-/* ------------HAMBURGER-------------*/
+/* ----------HAMBURGER-------------*/
 .hamburger {
     background: none;
     border: none;
@@ -60,7 +60,7 @@ header span {
     content: "\00D7";
 }
 
-/*--------------NAVIGATION------------ */
+/* ------- NAVIGATION -------- */
 
 .navigation {
     display: none;
@@ -88,18 +88,55 @@ header span {
     border-radius: 5px;
 }
 
-.navigation li.current a {
-    color: white;
-}
-
 .navigation a:hover {
     background-color: #0580f3;
     border-radius: 5px;
+    color: white;
 }
 
+/* ------- BODY ---------- */
+/* ---- HERO SECTION ----- */
+.hero-container {
+    position: relative;
+    display: block;
+    width: 100%;
+}
 
+.hero-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
-/* ----------------- BODY ------------------*/
+/* ------- Call to Action ------- */
+.hero-container button {
+    position: absolute;
+    bottom: 75px;
+    left: 75%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: solid 2px white;
+    font-size: .8rem;
+}
+
+/* ------- Current Events -------- */
+.current-events {
+    border: solid 1px orange; /* remove */
+}
+
+/* ------- Weather --------- */
+.weather-current {
+    border: solid 1px orange; /* remove */
+}
+
+.weather-forcast {
+    border: solid 1px orange; /* remove */
+}
+
+/* ------- Company Highlight ------- */
+.company-highlight {
+    border: solid 1px orange; /* remove */
+}
 
 h1 {
     margin-left: 10px;
@@ -112,7 +149,29 @@ img {
     border-radius: 5px;
 }
 
-/* ----------Filtering Buttons-------------*/
+
+.event-weather {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: solid 2px yellow; /* remove */
+}
+
+.current-events p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.current-events h2, .weather-current h2, .weather-forcast h2 {
+    text-align: center;
+    margin: 5px;
+    font-weight: 100;
+    color: white;
+    background-color: #9fa096;
+}
+
+/* ------ DIRECTORY OF MEMBERS ------- */
+/* ------ Filtering Buttons ------- */
 
 .member-filter {
     display: flex;
@@ -183,11 +242,18 @@ button:hover {
 }
 
 .list h2 {
-   text-align: center;
+    text-align: center;
     margin: 5px;
 }
 
-/* ---------------- FOOTER ---------------*/
+/* ------- Company Highlight -------- */
+
+.company-highlight {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* ------- FOOTER ------- */
 footer {
     padding: 1rem 10px;
     text-align: center;
@@ -207,6 +273,7 @@ footer {
     color: #011936;
 }
 
+/* ------- Social Media ------- */
 .social {
     display: flex;
     justify-content: center;
@@ -223,7 +290,6 @@ footer {
     border-radius: 10px;
 }
 
-
 /*
 .course-grid {
     display: grid;
@@ -231,6 +297,7 @@ footer {
     justify-items: center;
 } */
 
+/* ------- Copyright -------- */
 .copyright, .student {
     font-size: 0.8rem;
     color:  #23324b;

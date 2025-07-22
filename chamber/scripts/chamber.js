@@ -1,4 +1,4 @@
-// ------------------ Footer Copyright and Last Modified ---------------- //
+// -------- Footer Copyright and Last Modified ------- //
 const date = new Date();
 const currentYear = date.getFullYear();
 document.getElementById("currentYear").innerHTML = currentYear;
@@ -8,7 +8,7 @@ document.getElementById("lastModified").innerHTML = lastModified.toLocaleString(
     hour12: false
 });
 
-// --------------------- Hamburger Menu ------------------------ //
+// -------- Hamburger Menu -------- //
 const navbutton = document.querySelector('#ham-btn'); // # is for an ID
 const navBar = document.querySelector('#nav-bar');
 // Toggle the show class off and on //
@@ -18,7 +18,52 @@ navbutton.addEventListener('click', () => {
 });
 
 
-const url = './data/memberinformation.json';
+// -------- Weather API -------- //
+const town = document.querySelector('#town');
+const description = document.querySelector('#description');
+const temperature = document.querySelector('#temperature');
+const graphic = document.querySelector('#graphic');
+
+
+// -------- Required Variables for the URL -------- //
+const key = "692bd7103849f20085cd57cde936564f"
+const latitude = "41.51156666482383"
+const longitude = "-112.01563251929556"
+const weatherUrl = `//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=imperial`
+
+async function apiFetch() {
+    try {
+        const response = await fetch(weatherUrl);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data); 
+            displayResults(data);
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// ------- Display JSON Data ------- //
+function displayResults(data) {
+    town.innerHTML = data.name;
+    description.innerHTML = data.weather[0].description;
+    temperature.innerHTML = `${Math.round(data.main.temp)}°F`;
+    graphic.setAttribute("src", `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
+    graphic.setAttribute("alt", data.weather[0].description);
+    graphic.setAttribute("loading", "lazy");
+}
+
+
+
+
+
+
+
+
+const url = 'data/memberinformation.json';
 const cards = document.querySelector('#cards');
 let memberData = [];
 
@@ -29,7 +74,7 @@ function sortMembersByLevel(members) {
     });
 }
 
-// --------------------- Async/Await --------------------------- //
+// -------- Async/Await ------- //
 async function getMemberData () {
    try{
         const response = await fetch(url);
@@ -112,3 +157,5 @@ document.querySelector("#list").addEventListener("click", () => {
 });
 
 getMemberData();
+
+// ---------- Member Company Spotlight Section ----------- //
