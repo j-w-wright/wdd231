@@ -23,6 +23,7 @@ const town = document.querySelector('#town');
 const description = document.querySelector('#description');
 const temperature = document.querySelector('#temperature');
 const graphic = document.querySelector('#graphic');
+const forecast = document.querySelector('#forecast');
 
 
 // -------- Required Variables for the URL -------- //
@@ -30,6 +31,7 @@ const key = "692bd7103849f20085cd57cde936564f"
 const latitude = "41.51156666482383"
 const longitude = "-112.01563251929556"
 const weatherUrl = `//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=imperial`
+const forecastUrl = `//api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}&units=imperial`;
 
 async function apiFetch() {
     try {
@@ -41,10 +43,30 @@ async function apiFetch() {
         } else {
             throw Error(await response.text());
         }
-    } catch (error) {
+    } 
+    catch (error) {
         console.log(error);
     }
 }
+
+async function apiFetchForecast() {
+    try {
+        const response = await fetch(forecastUrl);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data); 
+            displayForecast(data);
+        } else {
+            throw Error(await response.text());
+        }
+    } 
+    catch (error) {
+        console.log(error);
+    }
+}
+
+apiFetch();
+apiFetchForecast();
 
 // ------- Display JSON Data ------- //
 function displayResults(data) {
@@ -56,6 +78,54 @@ function displayResults(data) {
     graphic.setAttribute("loading", "lazy");
 }
 
+// ------- Fetch and Display Forecast Data ------- //
+function displayForecast(data) {
+    // Get the forecast spans
+    const today = document.querySelector('#today');
+    const tomorrow = document.querySelector('#tomorrow');
+    const dayAfterTomorrow = document.querySelector('#dayAfterTomorrow');
+    
+    // OpenWeatherMap 5-day forecast gives data every 3 hours
+    // We'll get the high temperature for each day by finding the maximum temp in each day's forecasts
+    
+    // Group forecasts by date
+    const forecastsByDate = {};
+    const currentDate = new Date();
+    
+    data.list.forEach(forecast => {
+        const forecastDate = new Date(forecast.dt * 1000);
+        const dateKey = forecastDate.toDateString();
+        
+        if (!forecastsByDate[dateKey]) {
+            forecastsByDate[dateKey] = [];
+        }
+        forecastsByDate[dateKey].push(forecast);
+    });
+    
+    // Get dates for today, tomorrow, and day after tomorrow
+    const todayDate = currentDate.toDateString();
+    const tomorrowDate = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000).toDateString();
+    const dayAfterDate = new Date(currentDate.getTime() + 2 * 24 * 60 * 60 * 1000).toDateString();
+    
+    // Function to get high temperature for a day
+    function getDayHighTemp(forecasts) {
+        if (!forecasts || forecasts.length === 0) return 'N/A';
+        const temps = forecasts.map(f => f.main.temp_max);
+        return `${Math.round(Math.max(...temps))}°F`;
+    }
+    
+    // Populate the forecast spans
+    if (today) {
+        today.textContent = getDayHighTemp(forecastsByDate[todayDate]);
+    }
+    if (tomorrow) {
+        tomorrow.textContent = `Tomorrow: ${getDayHighTemp(forecastsByDate[tomorrowDate])}`;
+    }
+    if (dayAfterTomorrow) {
+        const dayAfterName = new Date(currentDate.getTime() + 2 * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { weekday: 'long' });
+        dayAfterTomorrow.textContent = `${dayAfterName}: ${getDayHighTemp(forecastsByDate[dayAfterDate])}`;
+    }
+}
 
 
 

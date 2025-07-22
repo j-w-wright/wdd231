@@ -50,6 +50,11 @@ h1 {
     border: solid 2px yellow; /* remove */
 }
 
+.weather-forecast-card {
+    font-size: 1.2rem;
+    padding-top: 25px;
+}
+
 /* .current-events h2, .weather-current h2, .weather-forcast h2 {
     text-align: center;
     margin: 5px;
