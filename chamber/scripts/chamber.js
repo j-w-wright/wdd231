@@ -131,7 +131,9 @@ function displayForecast(data) {
 
 
 
-
+// -------- Member Directory and Cards -------- //
+// This script fetches member data from a JSON file and displays it in card or list format
+// It also sorts members by their membership level (Gold, Silver, Member)
 
 const url = 'data/memberinformation.json';
 const cards = document.querySelector('#cards');
@@ -193,7 +195,6 @@ const displayMembers = (members, view = "card") => {
             image.setAttribute("height", "40");
             infoRow.appendChild(image);
         }
-
 
         let infoCol = document.createElement("div");
         infoCol.className = "card-info-col";
