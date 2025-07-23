@@ -146,27 +146,6 @@ function sortMembersByLevel(members) {
     });
 }
 
-function memberHighlight(members) {
-    const highlightSection = document.querySelector('.company-highlight');
-    highlightSection.innerHTML = ""; // Clear previous content
-    members.forEach(member => {
-        let card = document.createElement("section");
-        let name = document.createElement("h2");
-        let image = document.createElement("img");
-        
-        name.textContent = member.name;
-        image.setAttribute("src", member.image);
-        image.setAttribute("alt", `Logo of ${member.name}`);
-        image.setAttribute("loading", "lazy");
-        image.setAttribute("width", "40");
-        image.setAttribute("height", "40");
-
-        card.appendChild(name);
-        card.appendChild(image);
-        highlightSection.appendChild(card);
-    });
-}
-
 // -------- Async/Await ------- //
 async function getMemberData () {
    try{
@@ -252,3 +231,23 @@ getMemberData();
 
 // ---------- Member Company Spotlight Section ----------- //
 
+function memberHighlight(members) {
+    const highlightSection = document.querySelector('.company-highlight');
+    highlightSection.innerHTML = ""; // Clear previous content
+    members.forEach(member => {
+        let card = document.createElement("section");
+        let name = document.createElement("h2");
+        let image = document.createElement("img");
+        
+        name.textContent = member.name;
+        image.setAttribute("src", member.image);
+        image.setAttribute("alt", `Logo of ${member.name}`);
+        image.setAttribute("loading", "lazy");
+        image.setAttribute("width", "40");
+        image.setAttribute("height", "40");
+
+        card.appendChild(name);
+        card.appendChild(image);
+        highlightSection.appendChild(card);
+    });
+}
