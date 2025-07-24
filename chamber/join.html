@@ -46,6 +46,42 @@
         </nav>
         <main>
             <h1 class="join-title">Become a Member</h1>
+            <form method="get" action="" class="join-form">
+                <fieldset>
+                    <legend>Membership Application</legend>
+
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required>
+
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mobile">Cell Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="business-name">Business Name:</label>
+                    <input type="text" id="business-name" name="business-name" required>
+
+                    <label for="membership-type">Membership Type:</label>
+                    <select id="membership-type" name="membership-type" required>
+                        <option value selected>Select Membership Type</option>
+                        <option value="non-profit">Non-profit</option>
+                        <option value="bronze">Bronze</option>
+                        <option value="silver">Silver</option>
+                        <option value="gold">Gold</option>
+                    </select>
+                    <div>
+                    <label for="business-description">Business Description:
+                    <textarea id="business-description" name="business-description" rows="8" placeholder="Please describe the business" required></textarea>
+                    </label>
+                    <input type="hidden" id="timestamp" class="timestamp">
+                    </div>
+                </fieldset>
+                <input type="submit" value="Send Application" class="submit-button">
+
         </main>
         <footer>
         <!--Physical Address of the Chamber of Commerce-->

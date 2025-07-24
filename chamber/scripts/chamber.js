@@ -231,23 +231,18 @@ getMemberData();
 
 // ---------- Member Company Spotlight Section ----------- //
 
-function memberHighlight(members) {
-    const highlightSection = document.querySelector('.company-highlight');
-    highlightSection.innerHTML = ""; // Clear previous content
-    members.forEach(member => {
-        let card = document.createElement("section");
-        let name = document.createElement("h2");
-        let image = document.createElement("img");
-        
-        name.textContent = member.name;
-        image.setAttribute("src", member.image);
-        image.setAttribute("alt", `Logo of ${member.name}`);
-        image.setAttribute("loading", "lazy");
-        image.setAttribute("width", "40");
-        image.setAttribute("height", "40");
 
-        card.appendChild(name);
-        card.appendChild(image);
-        highlightSection.appendChild(card);
-    });
+
+// -------- Timestamp for Form Submission -------- //
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector(".join-form");
+
+    if (form) {
+        form.addEventListener("submit", function() {
+            const timestampField = document.getElementById("timestamp");
+            const now = new Date();
+            timestampField.value = now.toLocaleString();
+        })
+    }
 }
+) 

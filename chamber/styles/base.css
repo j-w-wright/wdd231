@@ -318,3 +318,28 @@ footer {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+/* ------- Join: Become a Member Form ------- */
+.join-form label {
+    display: block;
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+.join-form input, .join-form select {
+    width: 100%;
+    padding: .5rem;
+    margin-top: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.join-form .submit-button {
+    font-family: "Caveat", cursive;
+    background-color:  #3f5a2d;
+    border:  #3f5a2d;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
