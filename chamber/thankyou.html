@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thank You - Brigham City Chamber of Commerce</title>
+        <meta name="description" content="Thank you for joining the Brigham City Chamber of Commerce">
+        <meta name="author" content="Jared Wright">
+
+        <!--Open Graph Meta Tags for Facebook-->
+        <meta property="og:title" content="Thank You for Joining the Brigham City Chamber of Commerce">
+        <meta property="og:description" content="Thank you for joining the Brigham City Chamber of Commerce">
+        <meta property="og:image" content="https://j-w-wright.github.io/wdd231/chamber/images/box_elder_cc.png">
+        <meta property="og:url" content="https://j-w-wright.github.io/wdd231/chamber/thankyou.html">
+
+        <link rel="icon" href="favicon.ico"> <!--Need to create this-->
+
+        <!--CSS file - Style Sheets-->
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/base.css">
+        <link rel="stylesheet" href="styles/larger.css">
+
+        <!--CSS file - Font Styles-->
+                <!--Font Styles of Caveat and Montserrat-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!--Javascript file-->
+        <script src="scripts/chamber.js" defer></script>
 
     </head>
     <body>
         <header>
-
+            <img src="images/box_elder_cc.png" alt="site logo" width="45" height="45">
+            <span>Brigham City Chamber of Commerce</span>
+            <button id="ham-btn" class="hamburger" aria-label="Open navigation menu"></button>
         </header>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li> <!--How do I accurately use "current" always for the implementation of Wayfinding?-->
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
         <main>
-            <h1 class="thankyou">Thank You for Joining the Brigham City Chamber of Commerce!</h1>
-            <p>Your membership application has been received. We will contact you shortly with further details.</p>
-            <button onclick="location.href='index.html'">Return to Home</button>
+            <h1 class="thankyou">Thank You!</h1>
+            <p>We appreciate your interest in joining the Brigham City Chamber of Commerce.  Your membership application has been received.  We will contact you within the next two business days to share additional details. <br><br>Here are your responses. </p>
+            <div id="responseData">
+                <!--Form response information will be displayed here using JS-->
+            </div>
         </main>
         <footer>
-
+                    <!--Physical Address of the Chamber of Commerce-->
+            <div class="physical-address">
+                <p class="commerce-name">Brigham City Chamber of Commerce</p>
+                <p>6 North Main Street, Brigham City, UT 84302</p>
+                <p>435.723.XXXX</p>
+                <p>firstname@boxelderchamber.com</p>
+            </div>
+        <!--Social Media Icons and Links-->
+            <div class="social">
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="images/youtube.svg" alt="Youtube" width="40">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="images/facebook.svg" alt="Facebook" width="40">
+                </a>
+                <a href="https://www.x.com" target="_blank">
+                    <img src="images/twitter_x.svg" alt="X, formerly Twitter" width="80">
+                </a>              
+            </div>
+            <div class="copyright">
+                <p>WDD 231 Chamber Project | Jared Wright</p>
+        <!--Copyright and Last Modified-->
+                <p>&#169; <span id="currentYear"></span> | Brigham City Chamber of Commerce </p>
+                <p>Last modified: <span id="lastModified"></span></p> <!--will be populated dynamically with JavaScript-->
+            </div>
         </footer>
     </body>
 </html>

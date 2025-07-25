@@ -31,7 +31,7 @@
 
     </head>
     <body>
-        <header>
+       <header>
             <img src="images/box_elder_cc.png" alt="site logo" width="45" height="45">
             <span>Brigham City Chamber of Commerce</span>
             <button id="ham-btn" class="hamburger" aria-label="Open navigation menu"></button>
@@ -46,7 +46,7 @@
         </nav>
         <main>
             <h1 class="join-title">Become a Member</h1>
-            <form method="get" action="thankyou.html" class="join-form">
+            <form id="membershipForm" class="join-form">
                 <fieldset>
                     <legend>Membership Application</legend>
 
@@ -76,11 +76,12 @@
                     <label for="business-description"><span>Business Description: </span>
                     <textarea id="business-description" name="business-description" rows="8" placeholder="  Please describe the business" required></textarea>
                     </label>
-                    <input type="hidden" id="timestamp" class="timestamp">
+                    <input type="hidden" id="timestamp" name="timestamp" class="timestamp">
                 </fieldset>
                 <div class="submit-container">
                 <input type="submit" value="Send Application" class="submit-button">
                 </div>
+            </form>
         </main>
         <footer>
         <!--Physical Address of the Chamber of Commerce-->

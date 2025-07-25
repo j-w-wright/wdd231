@@ -234,15 +234,96 @@ getMemberData();
 
 
 // -------- Timestamp for Form Submission -------- //
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector(".join-form");
+//document.addEventListener("DOMContentLoaded", function() {
+//    const form = document.querySelector(".join-form");
+//
+//    if (form) {
+//        form.addEventListener("submit", function() {
+//            const timestampField = document.getElementById("timestamp");
+//            const now = new Date();
+//            timestampField.value = now.toLocaleString();
+//        })
+//    }
+//}
+//)
 
-    if (form) {
-        form.addEventListener("submit", function() {
+// -------- Handling Form Submission -------- //
+//const membershipForm = document.getElementById('membershipForm');
+//if (membershipForm) {
+//    membershipForm.addEventListener('submit', function(e) {
+//        e.preventDefault();
+//        
+//        // Get form data
+//        const formData = new FormData(this);
+//        const params = new URLSearchParams();
+//        
+//        // Add form fields to URL parameters
+//        for (let [key, value] of formData.entries()) {
+//            params.append(key, value);
+//        }
+//        
+//        // Redirect to thank you page with data
+//        window.location.href = `thankyou.html?${params.toString()}`;
+//    });
+//}
+
+// -------- Handling Form Submission -------- //
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded');
+    
+    const membershipForm = document.getElementById('membershipForm');
+    console.log('Form found:', membershipForm);
+    
+    if (membershipForm) {
+        membershipForm.addEventListener('submit', function(e) {
+            console.log('Form submitted!');
+            e.preventDefault(); // Prevent default submission FIRST
+            
+            // Set timestamp
             const timestampField = document.getElementById("timestamp");
-            const now = new Date();
-            timestampField.value = now.toLocaleString();
-        })
+            if (timestampField) {
+                const now = new Date();
+                timestampField.value = now.toLocaleString();
+                console.log('Timestamp set:', now.toLocaleString());
+            }
+            
+            // Get form data
+            const formData = new FormData(this);
+            const params = new URLSearchParams();
+            
+            console.log('Form data entries:');
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+                params.append(key, value);
+            }
+            
+            console.log('Redirecting to:', `thankyou.html?${params.toString()}`);
+            
+            // Redirect to thank you page with data
+            window.location.href = `thankyou.html?${params.toString()}`;
+        });
+    } else {
+        console.log('Form not found!');
+    }
+});
+
+// -------- Including the Responses in the Thank You page -------- //
+const responseDiv = document.getElementById('responseData');
+if (responseDiv) {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.toString()) {
+        let html = '<h3>Your Submitted Information:</h3><ul>';
+        
+        for (let [key, value] of urlParams.entries()) {
+            // Format the key name (remove dashes, capitalize)
+            const formattedKey = key.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            html += `<li><strong>${formattedKey}:</strong> ${value}</li>`;
+        }
+        
+        html += '</ul>';
+        responseDiv.innerHTML = html;
+    } else {
+        responseDiv.innerHTML = '<p>No form data received.</p>';
     }
 }
-) 
