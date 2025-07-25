@@ -322,7 +322,7 @@ footer {
 /* ------- Join: Become a Member Form ------- */
 .join-form label {
     display: block;
-    padding-top: 1rem;
+    padding-top: 2rem;
     font-size: 1rem;
 }
 
@@ -341,5 +341,59 @@ footer {
     border-radius: 10px;
     color: white;
     font-size: 1.5rem;
+    width: 98%;
 }
 
+.join-title {
+    padding-bottom: 20px;
+}
+
+.join-form legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.join-form .submit-button:hover {
+    background-color: #0580f3;
+    cursor: pointer;
+}
+
+.join-form textarea {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.join-form input {
+    font-size: 1rem;
+}
+
+.join-form input:required {
+    border-bottom: 6px solid red;
+}
+
+.join-form input:required:valid {
+    border-bottom: 6px solid green;
+}
+
+.join-form select {
+    font-size: 1rem;
+    height: 35px;
+}
+
+.join-form span {
+    display: block;
+    padding-bottom: 8px;
+}
+
+.join-form fieldset {
+    border: none;
+}
+
+.join-form .submit-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
