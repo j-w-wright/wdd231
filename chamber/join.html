@@ -46,42 +46,76 @@
         </nav>
         <main>
             <h1 class="join-title">Become a Member</h1>
-            <form id="membershipForm" class="join-form">
+            <h2 class="membership-title">Membership Types</h2>
+            <p class="form-directions">To apply for membership, please fill out the form.</p>
+            <div class="membership-info">
+                <div class="membership">
+                <h3>Gold Membership</h3>
+                <p>Gold Membership is for businesses that want to make a significant impact in the community and receive premium benefits.</p>
+                <button id="openButtonG">Learn More</button>
+                </div>
+                <div class="membership">
+                <h3>Silver Membership</h3>
+                <p>Silver Membership is for businesses that want to be active in the community and receive additional benefits.</p>
+                <button id="openButtonS">Learn More</button>
+                </div>
+                <div class="membership">
+                <h3>Bronze Membership</h3>
+                <p>Bronze Membership is for businesses that want to be part of the community and receive basic benefits.</p>
+                <button id="openButtonB">Learn More</button>
+                </div>
+                <div class="membership">
+                <h3>Non-Profit Membership</h3>
+                <p>Non-Profit Membership is for non-profit organizations that want to be part of the community and receive basic benefits.</p>
+                <button id="openButtonNP">Learn More</button>
+                </div>
+            </div>
+
+            <dialog id="dialogBox">
+                <div></div> <!--Use Javascript to fill in the details of the dialog box-->
+                <button id="closeButton">Close</button>
+            </dialog>   
+
+            <form id="membershipForm" class="join-form" method="get" action="thankyou.html">
                 <fieldset>
                     <legend>Membership Application</legend>
 
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" required>
+                    <label for="first-name">First Name:
+                    <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required></label>
 
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" required>
+                    <label for="last-name">Last Name:
+                    <input type="text" id="last-name" name="last-name" autocomplete="family-name" title="Enter your last name" required></label>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="org-title">Title:
+                    <input type="text" id="org-title" name="org-title" pattern="[A-Za-z\s\-]{7,}"" autocomplete="organization-title" title="Enter your organizational title" required></label>
 
-                    <label for="phone">Cell Phone:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    <label for="email">Email:
+                    <input type="email" id="email" name="email" autocomplete="email" title="Enter your email address" placeholder="example@domain.com" required></label>
 
-                    <label for="business-name">Business Name:</label>
-                    <input type="text" id="business-name" name="business-name" required>
+                    <label for="phone">Mobile Phone:
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" title="Enter your phone number" placeholder="(123) 456-7890" required></label>
 
-                    <label for="membership-type">Membership Type:</label>
+                    <label for="business-name">Business Name:
+                    <input type="text" id="business-name" name="business-name" autocomplete="organization" title="Enter your business name" required></label>
+
+                    <label for="membership-type">Membership Type:
                     <select id="membership-type" name="membership-type" required>
                         <option value selected>Select Membership Type</option>
                         <option value="non-profit">Non-profit</option>
                         <option value="bronze">Bronze</option>
                         <option value="silver">Silver</option>
                         <option value="gold">Gold</option>
-                    </select>
+                    </select></label>
+
                     <label for="business-description"><span>Business Description: </span>
-                    <textarea id="business-description" name="business-description" rows="8" placeholder="  Please describe the business" required></textarea>
-                    </label>
-                    <input type="hidden" id="timestamp" name="timestamp" class="timestamp">
+                    <textarea id="business-description" name="business-description" rows="5" title="Enter a description of the business"  placeholder=" Please describe the business" required></textarea></label>
+
+                    <label><input type="hidden" id="timestamp" name="timestamp" class="timestamp"></label>
+
                 </fieldset>
-                <div class="submit-container">
-                <input type="submit" value="Send Application" class="submit-button">
-                </div>
+                <button type="submit" class="submit-button">Send Application</button>
             </form>
+
         </main>
         <footer>
         <!--Physical Address of the Chamber of Commerce-->

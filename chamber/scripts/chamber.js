@@ -127,10 +127,6 @@ function displayForecast(data) {
     }
 }
 
-
-
-
-
 // -------- Member Directory and Cards -------- //
 // This script fetches member data from a JSON file and displays it in card or list format
 // It also sorts members by their membership level (Gold, Silver, Member)
@@ -207,24 +203,29 @@ const displayMembers = (members, view = "card") => {
 
         card.appendChild(name);
         card.appendChild(infoRow);
-        
-        //card.appendChild(name);
-        //card.appendChild(address);
-        //card.appendChild(phone);
-        //card.appendChild(membership_level);
-        //card.appendChild(website);
 
         cards.appendChild(card);
     });
 };
 
-document.querySelector("#card").addEventListener("click", () => {
-    const sortedMembers = sortMembersByLevel(memberData);
-    displayMembers(sortedMembers, "card");
-});
-document.querySelector("#list").addEventListener("click", () => {
-    const sortedMembers = sortMembersByLevel(memberData);
-    displayMembers(sortedMembers, "list");
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cardButton = document.querySelector("#card");
+    const listButton = document.querySelector("#list");
+    
+    if (cardButton) {
+        cardButton.addEventListener("click", () => {
+            const sortedMembers = sortMembersByLevel(memberData);
+            displayMembers(sortedMembers, "card");
+        });
+    }
+    
+    if (listButton) {
+        listButton.addEventListener("click", () => {
+            const sortedMembers = sortMembersByLevel(memberData);
+            displayMembers(sortedMembers, "list");
+        });
+    }
 });
 
 getMemberData();
@@ -233,51 +234,46 @@ getMemberData();
 
 
 
-// -------- Timestamp for Form Submission -------- //
-//document.addEventListener("DOMContentLoaded", function() {
-//    const form = document.querySelector(".join-form");
-//
-//    if (form) {
-//        form.addEventListener("submit", function() {
-//            const timestampField = document.getElementById("timestamp");
-//            const now = new Date();
-//            timestampField.value = now.toLocaleString();
-//        })
-//    }
-//}
-//)
 
-// -------- Handling Form Submission -------- //
-//const membershipForm = document.getElementById('membershipForm');
-//if (membershipForm) {
-//    membershipForm.addEventListener('submit', function(e) {
-//        e.preventDefault();
-//        
-//        // Get form data
-//        const formData = new FormData(this);
-//        const params = new URLSearchParams();
-//        
-//        // Add form fields to URL parameters
-//        for (let [key, value] of formData.entries()) {
-//            params.append(key, value);
-//        }
-//        
-//        // Redirect to thank you page with data
-//        window.location.href = `thankyou.html?${params.toString()}`;
-//    });
-//}
 
-// -------- Handling Form Submission -------- //
+// -------- Member Directory Button Event Listeners -------- //
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded');
+
+
+    const cardButton = document.querySelector("#card");
+    const listButton = document.querySelector("#list");
     
+    if (cardButton) {
+        cardButton.addEventListener("click", () => {
+            const sortedMembers = sortMembersByLevel(memberData);
+            displayMembers(sortedMembers, "card");
+        });
+    }
+    
+    if (listButton) {
+        listButton.addEventListener("click", () => {
+            const sortedMembers = sortMembersByLevel(memberData);
+            displayMembers(sortedMembers, "list");
+        });
+    }
+
+// ----- Form Submission and Thank You Page Response Handling ----- //  
+    
+    // Handle form submission
     const membershipForm = document.getElementById('membershipForm');
     console.log('Form found:', membershipForm);
     
     if (membershipForm) {
         membershipForm.addEventListener('submit', function(e) {
             console.log('Form submitted!');
-            e.preventDefault(); // Prevent default submission FIRST
+            
+            if (!this.checkValidity()) {
+                console.log('Form is not valid, submission cancelled');
+                return;
+            }
+            
+            e.preventDefault(); // Prevent default submission ONLY if valid
             
             // Set timestamp
             const timestampField = document.getElementById("timestamp");
@@ -287,43 +283,96 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Timestamp set:', now.toLocaleString());
             }
             
-            // Get form data
+            // Get form data and redirect
             const formData = new FormData(this);
             const params = new URLSearchParams();
             
-            console.log('Form data entries:');
             for (let [key, value] of formData.entries()) {
-                console.log(key, value);
                 params.append(key, value);
             }
             
-            console.log('Redirecting to:', `thankyou.html?${params.toString()}`);
-            
-            // Redirect to thank you page with data
             window.location.href = `thankyou.html?${params.toString()}`;
         });
-    } else {
-        console.log('Form not found!');
+    }
+    
+    // Thank You Page Response Display
+    const responseDiv = document.getElementById('responseData');
+    if (responseDiv) {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        if (urlParams.toString()) {
+            let html = '<h3>Your Submitted Information:</h3><ul>';
+            
+            for (let [key, value] of urlParams.entries()) {
+                const formattedKey = key.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                html += `<li><strong>${formattedKey}:</strong> ${value}</li>`;
+            }
+            html += '</ul>';
+            responseDiv.innerHTML = html;
+        } else {
+            responseDiv.innerHTML = '<p>No form data received.</p>';
+        }
     }
 });
 
-// -------- Including the Responses in the Thank You page -------- //
-const responseDiv = document.getElementById('responseData');
-if (responseDiv) {
-    const urlParams = new URLSearchParams(window.location.search);
-    
-    if (urlParams.toString()) {
-        let html = '<h3>Your Submitted Information:</h3><ul>';
-        
-        for (let [key, value] of urlParams.entries()) {
-            // Format the key name (remove dashes, capitalize)
-            const formattedKey = key.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-            html += `<li><strong>${formattedKey}:</strong> ${value}</li>`;
-        }
-        
-        html += '</ul>';
-        responseDiv.innerHTML = html;
-    } else {
-        responseDiv.innerHTML = '<p>No form data received.</p>';
-    }
-}
+// -------- Membership Modals -------- //
+
+const openButton = document.querySelector("#openButton");
+const dialogBox = document.querySelector("#dialogBox");
+const closeButton = document.querySelector("#closeButton");
+const dialogBoxText = document.querySelector("#dialogBox div");
+
+
+openButtonG.addEventListener("click", () => {
+    dialogBox.showModal();
+    dialogBoxText.innerHTML = `<h2>Gold Membership Benefits</h2>
+                <p>Gold Members receive premium benefits including:</p>
+                <ul>
+                    <li>Spotlight on the home page</li>
+                    <li>Priority listing in the directory</li>
+                    <li>Featured in monthly newsletters</li>
+                    <li>Discounts on events and advertising</li>
+                    <li>Exclusive networking opportunities</li>
+                </ul>` 
+})
+
+openButtonS.addEventListener("click", () => {
+    dialogBox.showModal();
+    dialogBoxText.innerHTML = `<h2>Silver Membership Benefits</h2>
+                <p>Silver Members receive additional benefits including:</p>
+                <ul>
+                <li>Spotlight on the home page</li>    
+                <li>Enhanced listing in the directory</li>
+                    <li>Inclusion in monthly newsletters</li>
+                    <li>Discounts on events</li>
+                </ul>` 
+})
+
+openButtonB.addEventListener("click", () => {
+    dialogBox.showModal();
+    dialogBoxText.innerHTML = `<h2>Bronze Membership Benefits</h2>
+                <p>Bronze Members receive basic benefits including:</p>
+                <ul>
+                    <li>Basic listing in the directory</li>
+                    <li>Inclusion in newsletters</li>
+                    <li>Access to events</li>
+                </ul>`
+})
+
+openButtonNP.addEventListener("click", () => {
+    dialogBox.showModal();
+    dialogBoxText.innerHTML = `<h2>Non-Profit Membership Benefits</h2>
+                <p>Non-Profit Members receive basic benefits including:</p>
+                <ul>
+                    <li>Basic listing in the directory</li>
+                    <li>Inclusion in newsletters</li>
+                    <li>Access to events</li>
+                </ul>` 
+})
+
+
+
+// ------ CLose the dialog box ------ //
+closeButton.addEventListener("click", () => {
+    dialogBox.close();
+});

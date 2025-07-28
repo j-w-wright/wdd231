@@ -334,16 +334,6 @@ footer {
     border-radius: 5px;
 }
 
-.join-form .submit-button {
-    font-family: "Caveat", cursive;
-    background-color:  #3f5a2d;
-    border:  #3f5a2d;
-    border-radius: 10px;
-    color: white;
-    font-size: 1.5rem;
-    width: 98%;
-}
-
 .join-title {
     padding-bottom: 20px;
 }
@@ -351,11 +341,6 @@ footer {
 .join-form legend {
     font-size: 1.5rem;
     font-weight: 600;
-}
-
-.join-form .submit-button:hover {
-    background-color: #0580f3;
-    cursor: pointer;
 }
 
 .join-form textarea {
@@ -392,8 +377,93 @@ footer {
     border: none;
 }
 
-.join-form .submit-container {
+/*.join-form .submit-container {
     display: flex;
     justify-content: center;
     padding-top: 20px;
+} */
+
+.membership {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: solid 1px #23324b;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.membership-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.membership h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.membership p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.membership button {
+    display: block;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    margin: 0 auto;
+    margin-top: auto;
+}
+
+.membership-title{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+form button {
+    margin: 0 15px 20px 15px;
+    display: block;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+.form-directions {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+join-form .timestamp {
+    display: none;
+}
+
+
+/* ------- Dialog Box ------- */
+dialog {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 20px;
+    border: solid 4px #23324b;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #3f5a2d;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
