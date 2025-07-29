@@ -68,9 +68,21 @@ h1 {
 
 /* ------- Company Highlight -------- */
 
-.company-highlight {
+.company-highlight h2 {
+    font-size: 2rem;;
+}
+
+.highlight-cards {
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;  
+    padding: 10px;
+}
+
+.spotlight-card h3 {
+    font-size: 1.7rem;
+
 }
 
 .membership-info {

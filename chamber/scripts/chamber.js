@@ -262,8 +262,8 @@ function displaySpotlightMembers() {
         image.setAttribute("src", member.image);
         image.setAttribute("alt", `Logo of ${member.name}`);
         image.setAttribute("loading", "lazy");
-        image.setAttribute("width", "100");
-        image.setAttribute("height", "50");
+        image.setAttribute("width", "150");
+        image.setAttribute("height", "auto");
         
         phone.textContent = member.phone;
         
@@ -271,7 +271,7 @@ function displaySpotlightMembers() {
         website.textContent = "Visit Website";
         website.target = "_blank";
         
-        membership.textContent = member.membership_level;
+        membership.textContent = `Membership level: ${member.membership_level}`;
         membership.className = `membership-${member.membership_level.toLowerCase()}`;
         
         card.appendChild(name);
