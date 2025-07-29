@@ -442,3 +442,27 @@ if (closeButton) {
         dialogBox.close();
 });
 }
+
+
+// Wayfinding - Set active navigation item
+function setActiveNavigation() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.navigation a');
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkPage = link.getAttribute('href');
+        
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index.html') ||
+            (currentPage === 'index.html' && linkPage === 'index.html')) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', setActiveNavigation);
