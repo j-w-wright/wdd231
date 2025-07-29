@@ -5,7 +5,7 @@
     "phone": "435-465-2093",
     "website_url": "https://www.bigotires.com",
     "image": "./images/Big_O_Tires.png",
-    "membership_level": "Member"
+    "membership_level": "Bronze"
 },
 {
     "name": "Hampton Inn",
@@ -21,7 +21,7 @@
     "phone": "435-734-4800",
     "website_url": "https://www.besd.net/",
     "image": "./images/BESD_logo.png",
-    "membership_level": "Member"
+    "membership_level": "Bronze"
 },
 {
     "name": "Brigham City Community Hospital",

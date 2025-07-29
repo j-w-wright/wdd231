@@ -143,13 +143,17 @@ function sortMembersByLevel(members) {
 }
 
 // -------- Async/Await ------- //
+// -------- Async/Await ------- //
 async function getMemberData () {
    try{
         const response = await fetch(url);
         const data = await response.json();
-        memberData = data; //important to make sure to include this so the array is populated.
+        memberData = data;
         const sortedMembers = sortMembersByLevel(memberData);
         displayMembers(sortedMembers, "card");
+        
+        // Call spotlight function after data is loaded
+        displaySpotlightMembers();
     } catch (error) {
         console.error("Fetch error: ", error);
     }
@@ -232,7 +236,76 @@ getMemberData();
 
 // ---------- Member Company Spotlight Section ----------- //
 
-
+function displaySpotlightMembers() {
+    console.log('displaySpotlightMembers called');
+    const highlightCards = document.querySelector('#highlight-cards');
+    
+    if (!highlightCards) {
+        console.log('No highlight-cards element found');
+        return;
+    }
+    
+    if (!memberData.length) {
+        console.log('No member data available');
+        return;
+    }
+    
+    // Filter for Gold and Silver members only
+    const eligibleMembers = memberData.filter(member => 
+        member.membership_level === "Gold" || member.membership_level === "Silver"
+    );
+    
+    console.log('Eligible members:', eligibleMembers.length);
+    
+    if (eligibleMembers.length === 0) {
+        console.log('No Gold or Silver members found');
+        return;
+    }
+    
+    // Randomly shuffle and select 3 members
+    const shuffled = eligibleMembers.sort(() => 0.5 - Math.random());
+    const selectedMembers = shuffled.slice(0, 3);
+    
+    // Clear existing content
+    highlightCards.innerHTML = "";
+    
+    // Create cards for selected members
+    selectedMembers.forEach(member => {
+        let card = document.createElement("div");
+        card.className = "spotlight-card";
+        
+        let name = document.createElement("h3");
+        let image = document.createElement("img");
+        let phone = document.createElement("p");
+        let website = document.createElement("a");
+        let membership = document.createElement("span");
+        
+        name.textContent = member.name;
+        
+        image.setAttribute("src", member.image);
+        image.setAttribute("alt", `Logo of ${member.name}`);
+        image.setAttribute("loading", "lazy");
+        
+        phone.textContent = member.phone;
+        
+        website.href = member.website_url;
+        website.textContent = "Visit Website";
+        website.target = "_blank";
+        
+        membership.textContent = member.membership_level;
+        membership.className = `membership-${member.membership_level.toLowerCase()}`;
+        
+        card.appendChild(name);
+        card.appendChild(image);
+        card.appendChild(phone);
+        card.appendChild(website);
+        card.appendChild(membership);
+        
+        highlightCards.appendChild(card);
+    });
+    
+    console.log('Spotlight cards created');
+}
 
 
 
@@ -370,9 +443,7 @@ openButtonNP.addEventListener("click", () => {
                 </ul>` 
 })
 
-
-
-// ------ CLose the dialog box ------ //
+// ------ Close the dialog box ------ //
 closeButton.addEventListener("click", () => {
     dialogBox.close();
 });
