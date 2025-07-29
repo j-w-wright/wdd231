@@ -209,7 +209,9 @@ const displayMembers = (members, view = "card") => {
     });
 };
 
-getMemberData();
+if (document.querySelector("#cards") || document.querySelector("#highlight-cards")) {
+    getMemberData();
+}
 
 // ---------- Member Company Spotlight Section ----------- //
 
@@ -292,9 +294,16 @@ function displaySpotlightMembers() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded');
 
-    getMemberData().then(() => {
-        displaySpotlightMembers();
-    });
+    // Only call getMemberData if we have elements that need it
+    if (document.querySelector('#cards')) {
+        getMemberData().then(() => {
+            displaySpotlightMembers();
+        });
+    } else if (document.querySelector('#highlight-cards')) {
+        getMemberData().then(() => {
+            displaySpotlightMembers();
+        });
+    }
 
     const cardButton = document.querySelector("#card");
     const listButton = document.querySelector("#list");
