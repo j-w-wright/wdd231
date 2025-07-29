@@ -247,8 +247,48 @@ button:hover {
 /* ------- Company Highlight -------- */
 
 .company-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.company-highlight h2 {
+    text-align: center;
+    margin: 20px 0 10px 0;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.highlight-cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 20px;  
+    padding: 10px;
+    border: solid 1px #9fa096; /* remove */
+    
+}
+
+.highlight-card{
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #9fa096; /* remove */
+}
+
+.highlight-card img {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.highlight-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
 }
 
 /* ------- FOOTER ------- */

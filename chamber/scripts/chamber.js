@@ -151,8 +151,6 @@ async function getMemberData () {
         const sortedMembers = sortMembersByLevel(memberData);
         displayMembers(sortedMembers, "card");
         
-        // Call spotlight function after data is loaded
-        displaySpotlightMembers();
     } catch (error) {
         console.error("Fetch error: ", error);
     }
@@ -264,6 +262,8 @@ function displaySpotlightMembers() {
         image.setAttribute("src", member.image);
         image.setAttribute("alt", `Logo of ${member.name}`);
         image.setAttribute("loading", "lazy");
+        image.setAttribute("width", "100");
+        image.setAttribute("height", "50");
         
         phone.textContent = member.phone;
         
@@ -292,6 +292,9 @@ function displaySpotlightMembers() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded');
 
+    getMemberData().then(() => {
+        displaySpotlightMembers();
+    });
 
     const cardButton = document.querySelector("#card");
     const listButton = document.querySelector("#list");
