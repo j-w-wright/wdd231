@@ -143,7 +143,6 @@ function sortMembersByLevel(members) {
 }
 
 // -------- Async/Await ------- //
-// -------- Async/Await ------- //
 async function getMemberData () {
    try{
         const response = await fetch(url);
@@ -211,26 +210,6 @@ const displayMembers = (members, view = "card") => {
         cards.appendChild(card);
     });
 };
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const cardButton = document.querySelector("#card");
-    const listButton = document.querySelector("#list");
-    
-    if (cardButton) {
-        cardButton.addEventListener("click", () => {
-            const sortedMembers = sortMembersByLevel(memberData);
-            displayMembers(sortedMembers, "card");
-        });
-    }
-    
-    if (listButton) {
-        listButton.addEventListener("click", () => {
-            const sortedMembers = sortMembersByLevel(memberData);
-            displayMembers(sortedMembers, "list");
-        });
-    }
-});
 
 getMemberData();
 
@@ -309,7 +288,7 @@ function displaySpotlightMembers() {
 
 
 
-// -------- Member Directory Button Event Listeners -------- //
+// ---- Member Directory Button Event Listeners ---- //
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded');
 
@@ -390,60 +369,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // -------- Membership Modals -------- //
 
-const openButton = document.querySelector("#openButton");
+const openButtonG = document.querySelector("#openButtonG");
+const openButtonS = document.querySelector("#openButtonS");
+const openButtonB = document.querySelector("#openButtonB");
+const openButtonNP = document.querySelector("#openButtonNP");
 const dialogBox = document.querySelector("#dialogBox");
 const closeButton = document.querySelector("#closeButton");
 const dialogBoxText = document.querySelector("#dialogBox div");
 
+if (openButtonG) {
+    openButtonG.addEventListener("click", () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Gold Membership Benefits</h2>
+                    <p>Gold Members receive premium benefits including:</p>
+                    <ul>
+                        <li>Spotlight on the home page</li>
+                        <li>Priority listing in the directory</li>
+                        <li>Featured in monthly newsletters</li>
+                        <li>Discounts on events and advertising</li>
+                        <li>Exclusive networking opportunities</li>
+                    </ul>` 
+    });
+}
 
-openButtonG.addEventListener("click", () => {
-    dialogBox.showModal();
-    dialogBoxText.innerHTML = `<h2>Gold Membership Benefits</h2>
-                <p>Gold Members receive premium benefits including:</p>
-                <ul>
-                    <li>Spotlight on the home page</li>
-                    <li>Priority listing in the directory</li>
-                    <li>Featured in monthly newsletters</li>
-                    <li>Discounts on events and advertising</li>
-                    <li>Exclusive networking opportunities</li>
-                </ul>` 
-})
+if (openButtonS) {
+    openButtonS.addEventListener("click", () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Silver Membership Benefits</h2>
+                    <p>Silver Members receive additional benefits including:</p>
+                    <ul>
+                    <li>Spotlight on the home page</li>    
+                    <li>Enhanced listing in the directory</li>
+                        <li>Inclusion in monthly newsletters</li>
+                        <li>Discounts on events</li>
+                    </ul>` 
+    });
+}
 
-openButtonS.addEventListener("click", () => {
-    dialogBox.showModal();
-    dialogBoxText.innerHTML = `<h2>Silver Membership Benefits</h2>
-                <p>Silver Members receive additional benefits including:</p>
-                <ul>
-                <li>Spotlight on the home page</li>    
-                <li>Enhanced listing in the directory</li>
-                    <li>Inclusion in monthly newsletters</li>
-                    <li>Discounts on events</li>
-                </ul>` 
-})
+if (openButtonB) {
+    openButtonB.addEventListener("click", () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Bronze Membership Benefits</h2>
+                    <p>Bronze Members receive basic benefits including:</p>
+                    <ul>
+                        <li>Basic listing in the directory</li>
+                        <li>Inclusion in newsletters</li>
+                        <li>Access to events</li>
+                    </ul>`
+    });
+}
 
-openButtonB.addEventListener("click", () => {
-    dialogBox.showModal();
-    dialogBoxText.innerHTML = `<h2>Bronze Membership Benefits</h2>
-                <p>Bronze Members receive basic benefits including:</p>
-                <ul>
-                    <li>Basic listing in the directory</li>
-                    <li>Inclusion in newsletters</li>
-                    <li>Access to events</li>
-                </ul>`
-})
+if (openButtonNP) {
+    openButtonNP.addEventListener("click", () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Non-Profit Membership Benefits</h2>
+                    <p>Non-Profit Members receive basic benefits including:</p>
+                    <ul>
+                        <li>Basic listing in the directory</li>
+                        <li>Inclusion in newsletters</li>
+                        <li>Access to events</li>
+                    </ul>` 
+    });
+}
 
-openButtonNP.addEventListener("click", () => {
-    dialogBox.showModal();
-    dialogBoxText.innerHTML = `<h2>Non-Profit Membership Benefits</h2>
-                <p>Non-Profit Members receive basic benefits including:</p>
-                <ul>
-                    <li>Basic listing in the directory</li>
-                    <li>Inclusion in newsletters</li>
-                    <li>Access to events</li>
-                </ul>` 
-})
 
 // ------ Close the dialog box ------ //
-closeButton.addEventListener("click", () => {
-    dialogBox.close();
+if (closeButton) {   
+    closeButton.addEventListener("click", () => {
+        dialogBox.close();
 });
+}
