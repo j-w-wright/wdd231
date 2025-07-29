@@ -42,6 +42,19 @@ header span {
     color: #23324b; 
 }
 
+.hero-container h1 {
+    font-size: 3rem;
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    width: 100%;
+    font-family: "Caveat", cursive;
+}
+
 /* ----------HAMBURGER-------------*/
 .hamburger {
     background: none;
