@@ -119,19 +119,6 @@ header span {
     font-size: 1rem;
 }
 
-/* ------- Current Events -------- */
-.current-events {
-    border: solid 1px orange; /* remove */
-}
-
-/* ------- Weather --------- */
-.weather-current {
-    border: solid 1px orange; /* remove */
-}
-
-.weather-forcast {
-    border: solid 1px orange; /* remove */
-}
 
 /* ------- Company Highlight ------- */
 .company-highlight {
@@ -149,11 +136,9 @@ img {
     border-radius: 5px;
 }
 
-
 .event-weather {
     display: grid;
     grid-template-columns: 1fr;
-    border: solid 2px yellow; /* remove */
 }
 
 .weather-card {
@@ -303,13 +288,6 @@ footer {
     border-radius: 10px;
 }
 
-/*
-.course-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-} */
-
 /* ------- Copyright -------- */
 .copyright, .student {
     font-size: 0.8rem;
@@ -376,12 +354,6 @@ footer {
 .join-form fieldset {
     border: none;
 }
-
-/*.join-form .submit-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-} */
 
 .membership {
     display: flex;

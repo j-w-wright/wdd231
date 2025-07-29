@@ -47,7 +47,6 @@ h1 {
 .event-weather {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    border: solid 2px yellow; /* remove */
 }
 
 .weather-forecast-card {
