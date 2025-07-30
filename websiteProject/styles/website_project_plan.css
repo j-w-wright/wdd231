@@ -1,0 +1,105 @@
+/* Black: #231F20 (used for "BURGERS N SCOOPS" text and lines)
+White: #FFFFFF (background color)
+Pink: #EB67A9 (one of the ice cream scoops)
+Teal/Green: #5FA79E (the other ice cream scoop) */
+
+
+header {
+    display: grid;
+    grid-template-columns: 70px auto 50px;
+    padding: 5px 0 10px 10px;
+    align-items: center;
+    column-gap: 20px;
+    background-color: #231F20;
+    color: #FFFFFF;
+}
+
+.website-title {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-family: "Monterrat", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    font-family: "Caveat", cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    background-color: #5FA79E;
+    padding: 5px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    background-color: #231F20;
+    color: #FFFFFF;
+/*    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #231F20;
+    color: #FFFFFF; */
+}
+
+.navigation.show {
+    display: block;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navigation li.current {
+    background-color: #9fa096;
+    border-radius: 5px;
+}
+
+.navigation a:hover {
+    background-color: #EB6789;
+    border-radius: 5px;
+    color: white;
+}
+
+.navigation a.active {
+    background-color: #EB6789;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* ----------HAMBURGER-------------*/
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hamburger::before {
+    content: "\2630";
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+}
