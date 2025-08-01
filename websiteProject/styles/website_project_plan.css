@@ -103,3 +103,24 @@ h2 {
 .hamburger.show::before {
     content: "\00D7";
 }
+
+.primary-font {
+    font-family: "Montserrat", sans-serif;
+}
+
+.secondary-font {
+    font-family: "Caveat", cursive;
+}
+
+footer {
+    background-color: #231F20;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+footer .name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
