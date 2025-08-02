@@ -142,8 +142,14 @@ h2 {
 
 .wireframes ul {
     padding-bottom: 20px;
-    line-height: 2rem;
+    line-height: 2rem;    
 }
+
+.wireframes a {
+    color: #231F20;
+    text-decoration: none;
+}
+
 
 
 footer {
