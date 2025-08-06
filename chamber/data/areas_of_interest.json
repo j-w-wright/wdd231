@@ -1,41 +1,57 @@
-{
-    "title": "Promontory Point",
-    "image": "images/GoldenSpike.jpg",
-    "description": "Promontory Point is a historic site in Utah where the First Transcontinental Railroad was completed in 1869.",
-    "address": "",
+[
+    {
+        "title": "Golden Spike National Historical Park",
+        "image": "images/GoldenSpike.jpg",
+        "description": "Promontory Point is a historic site in Utah where the First Transcontinental Railroad was completed in 1869.",
+        "address": "6200 N 22300 W, Corinne, UT 84307"
+    },
 
-    "title": "Maddox Ranch Restaurant",
-    "image": "images/MaddoxRestaurant.jpg",
-    "description": "The Maddox Ranch House is a family-owned restaurant in Perry, Utah going back to 1949.",
-    "address": "1900 S Highway 89, Perry, UT 84302",
+    {
+        "title": "Maddox Ranch Restaurant",
+        "image": "images/MaddoxRestaurant.jpg",
+        "description": "The Maddox Ranch House is a family-owned restaurant in Perry, Utah going back to 1949.",
+        "address": "1900 S Highway 89, Perry, UT 84302"
+    },
 
-    "title": "Bear River Migratory Bird Refuge",
-    "image": "images/BirdRefuge.jpg",
-    "description": "The Bear River Migratory Bird Refuge is a 74,000-acre refuge in northern Utah that provides habitat for migratory birds.",
-    "address": "2155 W Forest St, Brigham City, UT 84302",
+    {    
+        "title": "Bear River Migratory Bird Refuge",
+        "image": "images/BirdRefuge.jpg",
+        "description": "The Bear River Migratory Bird Refuge is a 74,000-acre refuge in northern Utah that provides habitat for migratory birds.",
+        "address": "2155 W Forest St, Brigham City, UT 84302"
+    },
 
-    "title": "Crystal Hot Springs",
-    "image": "images/CrystalHotSprings.jpg",
-    "description": "The Crystal Hot Spring is a natural hot spring located in Honeyville, Utah.",
-    "address": "8215 UT-38, Honeyville, UT 84314",
+    {
+        "title": "Crystal Hot Springs",
+        "image": "images/CrystalHotSprings.jpg",
+        "description": "The Crystal Hot Spring is a natural hot spring located in Honeyville, Utah.",
+        "address": "8215 UT-38, Honeyville, UT 84314",
+    },
 
-    "title": "Fruit Highway",
-    "image": "images/FruitHighway.jpg",
-    "description": "Orchards and farms along Highway 89 in northern Utah offer a variety of fresh produce, including peaches, cherries, and apples.",
-    "address": "Highway 89 between Willard and Brigham City, Utah",
+    {
+        "title": "Fruit Highway",
+        "image": "images/FruitHighway.jpg",
+        "description": "Orchards and farms along Highway 89 in northern Utah offer a variety of fresh produce, including peaches, cherries, and apples.",
+        "address": "Highway 89 between Willard and Brigham City, Utah"
+    },
 
-    "title": "Box Elder Tabernacle",
-    "image": "images/BE_Tabernacle.jpg",
-    "description": "The Box Elder Tabernacle is a historic building in Brigham City, Utah, built in 1912 and used for religious services and community events.",
-    "address": "251 S Main St, Brigham City, UT 84302",
+    {
+        "title": "Box Elder Tabernacle",
+        "image": "images/BE_Tabernacle.jpg",
+        "description": "The Box Elder Tabernacle is a historic building in Brigham City, Utah, built in 1912 and used for religious services and community events.",
+        "address": "251 S Main St, Brigham City, UT 84302"
+    },
 
-    "title": "Brigham City Temple",
-    "image": "images/brigham_city_utah_temple_dawn.jpg",
-    "description": "Built in 2012, the Brigham City Utah Temple is a place of worship for members of The Church of Jesus Christ of Latter-day Saints.",
-    "address": "250 S Main St, Brigham City, UT 84302",
+    {
+        "title": "Brigham City Temple",
+        "image": "images/brigham_city_utah_temple_dawn.jpg",
+        "description": "Built in 2012, the Brigham City Utah Temple is a place of worship for members of The Church of Jesus Christ of Latter-day Saints.",
+        "address": "250 S Main St, Brigham City, UT 84302"
+    },
 
-    "title": "Willard Bay",
-    "description": "Willard Bay is a large reservoir located in northern Utah, offering recreational activities such as boating, fishing, and camping.",
-    "image": "images/WillardBay.jpg",
-    "address": "900 W 650 N #A, Willard, UT 84340"
-}
+    {
+        "title": "Willard Bay",
+        "description": "Willard Bay is a large reservoir located in northern Utah, offering recreational activities such as boating, fishing, and camping.",
+        "image": "images/WillardBay.jpg",
+        "address": "900 W 650 N #A, Willard, UT 84340"
+    }
+]

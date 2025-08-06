@@ -486,6 +486,8 @@ function setActiveNavigation() {
 
 // ------- Areas of Interest -------- //
 const areasData= 'data/areas_of_interest.json';
+const areas = document.querySelector('#areas-of-interest');
+let areaData = [];
 
 function displayAreasOfInterest(areas) {
     const areasContainer = document.querySelector('#areas-of-interest');
