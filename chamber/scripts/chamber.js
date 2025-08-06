@@ -294,8 +294,15 @@ function displaySpotlightMembers() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded');
 
+   setActiveNavigation(); // Set active navigation item 
+   
+   // Call the function when the page loads (only if the container exists)
+    if (document.querySelector('#areas-of-interest')) {
+        getAreasOfInterest();
+    }
+   
     // Only call getMemberData if we have elements that need it
-    if (document.querySelector('#cards')) {
+   if (document.querySelector('#cards')) {
         getMemberData().then(() => {
             displaySpotlightMembers();
         });
@@ -474,4 +481,93 @@ function setActiveNavigation() {
 }
 
 // Call the function when the page loads
-document.addEventListener('DOMContentLoaded', setActiveNavigation);
+//document.addEventListener('DOMContentLoaded', setActiveNavigation);
+
+
+// ------- Areas of Interest -------- //
+const areasData= 'data/areas_of_interest.json';
+
+function displayAreasOfInterest(areas) {
+    const areasContainer = document.querySelector('#areas-of-interest');
+    
+    if (!areasContainer) {
+        console.error('No areas-of-interest element found');
+        return;
+    }
+    
+    areasContainer.innerHTML = ''; // Clear existing content
+    
+    areas.forEach(area => {
+        let areaDiv = document.createElement('div');
+        areaDiv.className = 'area-of-interest';
+        
+        let areaTitle = document.createElement('h2');
+        areaTitle.textContent = area.title;
+        
+        let image = document.createElement('img');
+        image.setAttribute('src', area.image);
+        image.setAttribute('alt', `Image of ${area.title}`);
+        image.setAttribute('loading', 'lazy');
+        image.setAttribute('width', '300');
+        image.setAttribute('height', '200');    
+
+        let areaAddress = document.createElement('address');
+        areaAddress.textContent = area.address || 'Address not available';
+
+        let areaDescription = document.createElement('p');
+        areaDescription.textContent = area.description;
+
+        let areaInfo = document.createElement('button');
+        areaInfo.textContent = 'Learn More';
+        areaInfo.className = 'area-info-button';
+        areaInfo.addEventListener('click', () => {
+            alert(`More information about ${area.title} will be available soon!`);  
+        });  
+        
+        areaDiv.appendChild(areaTitle);
+        areaDiv.appendChild(image);
+        areaDiv.appendChild(areaAddress);
+        areaDiv.appendChild(areaDescription);
+        areaDiv.appendChild(areaInfo);
+        areaDiv.classList.add('area-of-interest-card'); // Add a class for styling
+        
+        areasContainer.appendChild(areaDiv);
+    });
+}
+
+
+async function getAreasOfInterest() {
+    console.log('getAreasOfInterest called');
+    console.log('Fetching from:', areasData);
+    
+    try {
+        const response = await fetch(areasData);
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+        
+        if (response.ok) {
+            const areas = await response.json();
+            console.log('Areas data:', areas);
+            console.log('Number of areas:', areas.length);
+            displayAreasOfInterest(areas);
+        } else {
+            console.error('Response not ok:', response.status, response.statusText);
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.error('Error fetching areas of interest:', error);
+    }
+//async function getAreasOfInterest() {
+//        try {
+//        const response = await fetch(areasData);
+//        if (response.ok) {
+//            const areas = await response.json();
+//            displayAreasOfInterest(areas);
+//        } else {
+//            throw Error(await response.text());
+//        }
+//    } catch (error) {
+//        console.error('Error fetching areas of interest:', error);
+//    }
+};
+
