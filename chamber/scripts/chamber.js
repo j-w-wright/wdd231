@@ -513,6 +513,9 @@ function displayAreasOfInterest(areas) {
         image.setAttribute('width', '300');
         image.setAttribute('height', '200');    
 
+        let figure = document.createElement('figure');
+        figure.appendChild(image);
+
         let areaAddress = document.createElement('address');
         areaAddress.textContent = area.address || 'Address not available';
 
@@ -527,9 +530,10 @@ function displayAreasOfInterest(areas) {
         });  
         
         areaDiv.appendChild(areaTitle);
+        areaDiv.appendChild(areaDescription);
         areaDiv.appendChild(image);
         areaDiv.appendChild(areaAddress);
-        areaDiv.appendChild(areaDescription);
+       
         areaDiv.appendChild(areaInfo);
         areaDiv.classList.add('area-of-interest-card'); // Add a class for styling
         

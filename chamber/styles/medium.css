@@ -1,0 +1,18 @@
+@media only screen and (min-width: 38rem) {
+    .area-of-interest-card {
+    margin-bottom: 20px;
+    border: 1px solid #9fa096;
+    background-color: rgb(159, 160, 150, .3);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "figure"
+    "description"
+    "address"
+    "button";
+}
+} 

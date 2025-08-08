@@ -494,3 +494,58 @@ dialog button {
     border: none;
     border-radius: 5px;
 }
+
+/* ------- Areas of Interest ------- */
+.area-of-interest-card {
+    margin-bottom: 20px;
+    border: 1px solid #9fa096;
+    background-color: rgb(159, 160, 150, .3);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+
+    display: grid;
+    grid-template-areas: 
+    "title"
+    "figure"
+    "description"
+    "address"
+    "button";
+}
+
+.area-of-interest-card h2 {
+    font-size: 2rem;
+    font-family: "caveat", cursive;
+    margin: 1rem 10px;
+    grid-area: title;
+}
+.area-of-interest-card p {
+    font-size: 1rem;
+    text-align: center;
+    grid-area: description;
+}
+
+.area-of-interest-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    grid-area: figure;
+}
+
+.area-of-interest-card address {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+    grid-area: address;
+}
+
+.area-of-interest-card button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    background-color: #3f5a2d;
+    color: white;
+    border-radius: 5px;
+    grid-area: button;
+}
