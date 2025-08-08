@@ -43,7 +43,7 @@ header span {
 }
 
 .hero-container h1 {
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin: 0;
     padding: 10px;
     position: absolute;
@@ -63,6 +63,7 @@ header span {
     color: #23324b;
     cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
 }
 
 .hamburger::before {
@@ -238,9 +239,9 @@ button {
     font-family: "Caveat", cursive;
     background-color:  #3f5a2d;
     border:  #3f5a2d;
-    border-radius: 10px;
+    border-radius: 20px;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 1.5rem;
 }
 
@@ -445,6 +446,8 @@ footer {
     padding: 10px 15px;
     margin: 0 auto;
     margin-top: auto;
+    border-radius: 20px;
+    width: 100%;
 }
 
 .membership-title{
@@ -492,16 +495,17 @@ dialog button {
     background-color: #3f5a2d;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
+/* ------- DISCOVER PAGE -------*/
 /* ------- Areas of Interest ------- */
 .area-of-interest-card {
     margin-bottom: 20px;
     border: 1px solid #9fa096;
     background-color: rgb(159, 160, 150, .3);
     border-radius: 10px;
-    overflow: hidden;
+   /*overflow: hidden;*/
     padding-bottom: 10px;
 
     display: grid;
@@ -541,11 +545,23 @@ dialog button {
 
 .area-of-interest-card button {
     display: block;
+    width: 95%;
     margin: 10px auto 0;
     padding: 10px 20px;
     font-size: 1.3rem;
     background-color: #3f5a2d;
     color: white;
-    border-radius: 5px;
+    border-radius: 20px;
     grid-area: button;
 }
+
+/* -------- Visit Tracker -------- */
+.visit-tracker {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #0580f3;
+}
+

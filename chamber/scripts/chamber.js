@@ -563,17 +563,49 @@ async function getAreasOfInterest() {
     } catch (error) {
         console.error('Error fetching areas of interest:', error);
     }
-//async function getAreasOfInterest() {
-//        try {
-//        const response = await fetch(areasData);
-//        if (response.ok) {
-//            const areas = await response.json();
-//            displayAreasOfInterest(areas);
-//        } else {
-//            throw Error(await response.text());
-//        }
-//    } catch (error) {
-//        console.error('Error fetching areas of interest:', error);
-//    }
 };
+
+// Function to display visit message
+function displayVisitMessage() {
+    // Get the last visit date from localStorage
+    const lastVisit = localStorage.getItem('lastVisit');
+    const currentDate = new Date();
+    const currentTime = currentDate.getTime();
+    
+    let message = '';
+    
+    if (!lastVisit) {
+        // First visit
+        message = "Welcome! Let us know if you have any questions.";
+    } else {
+        // Calculate days between visits
+        const lastVisitTime = parseInt(lastVisit);
+        const timeDifference = currentTime - lastVisitTime;
+        const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        
+        if (daysDifference < 1) {
+            // Less than a day
+            message = "Back so soon! Awesome!";
+        } else if (daysDifference === 1) {
+            // Exactly 1 day
+            message = "You last visited 1 day ago.";
+        } else {
+            // More than 1 day
+            message = `You last visited ${daysDifference} days ago.`;
+        }
+    }
+    
+    // Display the message
+    const visitMessageElement = document.getElementById('visit-message');
+    if (visitMessageElement) {
+        visitMessageElement.textContent = message;
+        visitMessageElement.style.display = 'block';
+    }
+    
+    // Store current visit date
+    localStorage.setItem('lastVisit', currentTime.toString());
+}
+
+// Run when page loads
+document.addEventListener('DOMContentLoaded', displayVisitMessage);
 

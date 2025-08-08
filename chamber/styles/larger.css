@@ -96,4 +96,12 @@ h1 {
     grid-gap: 10px;
 }
 
+
+/* ------- Areas of Interest ------ */
+
+#areas-of-interest {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
 }
