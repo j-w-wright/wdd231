@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 70px auto 50px;
+    padding: 5px 0 10px 10px;
+    align-items: center;
+    column-gap: 20px;
+    background-color: #231F20;
+    color: #FFFFFF;
+}
+
+.website-title {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    letter-spacing: 0.3em; /* Spreads out the lettering */
+    padding: 10px;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-family: "Monterrat", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    font-family: "Caveat", cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    background-color: #5FA79E;
+    padding: 5px;
+    font-weight: 100;
+}
+
+/* ------ NAVIGATION ------ */
+
+.navigation {
+    display: none;
+    background-color: #231F20;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.navigation.show {
+    display: block;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navigation li.current {
+    background-color: #9fa096;
+    border-radius: 5px;
+}
+
+.navigation a:hover {
+    background-color: #EB6789;
+    color: white;
+}
+
+.navigation a.active {
+    background-color: #EB6789;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* ----------HAMBURGER-------------*/
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hamburger::before {
+    content: "\2630";
+}
+
+.hamburger.show::before {
+    content: "\00D7";
+}
+
+/* -------- Hero Content -------- */
+.hero-container {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.hero-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ------- Call to Action -------- */
+.hero-container button {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: solid 2px white;
+    font-size: 1.2rem;
+    width: 350px;
+    padding: 10px 20px;
+}
+
+/* ----------MAIN CONTENT-------------*/
+/* ----------Announcement Section-------------*/
+
+.menu-announcement {
+    padding: 10px;
+}
+.menu-announcement p{
+    font-weight: 600;
+    text-align: center;
+}
+
+.menu-announcement ul {
+    list-style-type: disc;
+    padding-left: 50px;
+    font-size: 0.9rem;
+}
+
+.new-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px;
+    justify-items: center;
+}
+
+/* ----------About Us Section-------------*/
+.about-content {
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.review-content {
+    padding: 10px;
+    line-height: 2;
+    font-size: 0.8rem;
+}
+
+/* ----------Employment Application Form-------------*/
+.employment-info ul {
+    list-style-type: disc;
+    padding: 0 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+#application-form, .employment-title, .employment-info, .application-info, .visit-tracker {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.application-info {
+    padding-bottom: 20px;
+}
+
+#application-form legend {
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Caveat", cursive;
+
+}
+
+#application-form label {
+    display: block;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#application-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#application-form input:required {
+    border-left: 6px solid red;
+}
+
+#application-form input:required:valid {
+    border-left: 6px solid green;
+}
+
+#application-form fieldset {
+    border: none;
+}
+
+#position {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
+#application-form #position {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #eee;
+}
+
+#resume {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #eee;
+}
+
+button {
+    background-color: #5FA79E;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    width: 100%;
+    font-family: "caveat", cursive;
+}
+
+button:hover {
+    background-color: #EB6789;
+}
+
+.visit-tracker {
+    padding: 10px 0;
+    font-weight: 600;
+    font-family: "Caveat", cursive;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* ----------FOOTER-------------*/
+footer {
+    background-color: #231F20;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+footer .name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease;
+}

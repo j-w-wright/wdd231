@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Thank You Page Response Display
-    const responseDiv = document.getElementById('responseData');
+    const responseDiv = document.getElementById('#responseData');
     if (responseDiv) {
         const urlParams = new URLSearchParams(window.location.search);
         
@@ -479,9 +479,6 @@ function setActiveNavigation() {
         }
     });
 }
-
-// Call the function when the page loads
-//document.addEventListener('DOMContentLoaded', setActiveNavigation);
 
 
 // ------- Areas of Interest -------- //

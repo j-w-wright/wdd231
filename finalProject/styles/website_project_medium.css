@@ -1,0 +1,49 @@
+@media only screen and (min-width: 38rem) {
+
+.new-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+    justify-items: center;
+}
+
+.review-content {
+    font-size: 1rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.navigation {
+    display: block;
+    background-color: #231F20;
+    color: #FFFFFF;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navigation a {
+    border: none;
+    border-radius: 5px;
+}
+
+
+/* ------- Call to Action -------- */
+.hero-container button {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border: solid 2px white;
+    font-size: 1.8rem;
+    width: 500px;
+    padding: 10px 20px;
+}
+
+}

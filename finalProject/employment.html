@@ -26,49 +26,51 @@
         </header>
         <nav id="nav-bar" class="navigation">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li> <!--Wayfinding is using Javascript-->
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="employment.html">Employment</a></li>
             </ul>
         </nav>
         <main>
-            <div class="hero-container">
-                <h1>Hungry for some delicious food?</h1>
-                <picture>
-                    <source srcset="images/hero_image_large.webp" media="(min-width: 65rem)">
-                    <source srcset="images/hero_image_medium.webp" media="(min-width: 38rem)">
-                    <img src="images/hero_image.webp" alt="Burgers 'n Scoops Restaurant">
-                </picture>
-                <button onclick="location.href='employment.html'">We are hiring!  Click here for the application.</button>
-            <div class="announcements">
-                <h2>Announcements</h2>
-                <div class="menu-announcement">
-                    <p>Check out this month's specials!</p> <!--Add Javascript to pull and randomly display the new menu items-->
-                        <ul class="new-items">
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
-                </div>
+            <h1 class="employment-title">Employment Opportunities</h1>
+            <div class="employment-info">
+                <p>We are currently hiring for the following positions:</p>
+                <ul>
+                    <li>Cook</li>
+                    <li>Cashier</li>
+                </ul>
             </div>
-            <div class="about-container">
-                <div class="about">
-                    <h2>About Us</h2>
-                    <div class="about-content">
-                        <p>Burgers 'n Scoops is your go-to place for delicious burgers and ice cream in Brigham City, Utah. We pride ourselves on using fresh ingredients and providing a friendly atmosphere for our customers.</p>
-                        <p>Visit us at our physical location or explore our website to learn more about our menu, specials, and how to place an order online.</p>
-                    </div>
-                </div>
-                <div class="reviews">
-                    <h2>Reviews</h2>
-                    <div class="review-content"> <!--Add Javascript to pull in a spreadsheet for responses and randomly display the review and first name of the person-->
-                        <p>"Best burgers in town! The shakes are amazing too!" - Jane D.</p>
-                        <p>"Great service and delicious food. Highly recommend!" - John S.</p>
-                        <p>"A perfect place for a family outing. Kids love the ice cream!" - Sarah L.</p>
-                    </div>
-                </div>
-            </div>
+            <div id="visit-message" class="visit-tracker"></div> <!--This will be populated with the visit message-->
+            <p class="application-info">To apply, please fill out the application form below.</p>
+            <form id="application-form" action="thankyou_employment.html" method="get">
+                <fieldset>   
+                    <legend>Employment Application</legend>
+
+                    <label for="firstname">First Name:
+                    <input type="text" id="firstname" name="firstname" required></label>
+
+                    <label for="lastname">Last Name:
+                    <input type="text" id="lastname" name="lastname" required></label>
+
+                    <label for="email">Email:
+                    <input type="email" id="email" name="email" autocomplete="email" title="Enter your email address" placeholder="example@domain.com" required></label>
+
+                    <label for="phone">Phone:
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" title="Enter your phone number" placeholder="(123) 456-7890" required></label>
+
+                    <label for="position">Position Applying For:
+                    <select id="position" name="position">
+                        <option value="cook">Cook</option>
+                        <option value="cashier">Cashier</option>
+                    </select></label>
+
+                    <label for="resume">Resume (optional):</label>
+                    <input type="file" id="resume" name="resume">
+                </fieldset>
+                <button type="submit">Submit Application</button>
+            </form>
+
         </main>
         <footer>
             <div class="physical-address">
@@ -98,5 +100,3 @@
         </footer>
     </body>
 </html>
-
-            

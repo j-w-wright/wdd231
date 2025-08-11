@@ -26,48 +26,17 @@
         </header>
         <nav id="nav-bar" class="navigation">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li> <!--Wayfinding is using Javascript-->
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="employment.html">Employment</a></li>
             </ul>
         </nav>
         <main>
-            <div class="hero-container">
-                <h1>Hungry for some delicious food?</h1>
-                <picture>
-                    <source srcset="images/hero_image_large.webp" media="(min-width: 65rem)">
-                    <source srcset="images/hero_image_medium.webp" media="(min-width: 38rem)">
-                    <img src="images/hero_image.webp" alt="Burgers 'n Scoops Restaurant">
-                </picture>
-                <button onclick="location.href='employment.html'">We are hiring!  Click here for the application.</button>
-            <div class="announcements">
-                <h2>Announcements</h2>
-                <div class="menu-announcement">
-                    <p>Check out this month's specials!</p> <!--Add Javascript to pull and randomly display the new menu items-->
-                        <ul class="new-items">
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
-                </div>
-            </div>
-            <div class="about-container">
-                <div class="about">
-                    <h2>About Us</h2>
-                    <div class="about-content">
-                        <p>Burgers 'n Scoops is your go-to place for delicious burgers and ice cream in Brigham City, Utah. We pride ourselves on using fresh ingredients and providing a friendly atmosphere for our customers.</p>
-                        <p>Visit us at our physical location or explore our website to learn more about our menu, specials, and how to place an order online.</p>
-                    </div>
-                </div>
-                <div class="reviews">
-                    <h2>Reviews</h2>
-                    <div class="review-content"> <!--Add Javascript to pull in a spreadsheet for responses and randomly display the review and first name of the person-->
-                        <p>"Best burgers in town! The shakes are amazing too!" - Jane D.</p>
-                        <p>"Great service and delicious food. Highly recommend!" - John S.</p>
-                        <p>"A perfect place for a family outing. Kids love the ice cream!" - Sarah L.</p>
-                    </div>
-                </div>
+            <h1 class="thankyou">Thank You!</h1>
+            <p>Thank you for your interest in joining our team at Burgers 'n Scoops.  Your application has been received.  We will contact you within the next two business days.</p>
+            <div id="responseData" class="response-data">
+                <!--Form response information will be displayed here using JS-->
             </div>
         </main>
         <footer>
@@ -98,5 +67,3 @@
         </footer>
     </body>
 </html>
-
-            
