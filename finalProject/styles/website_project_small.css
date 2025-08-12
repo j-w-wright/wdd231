@@ -131,27 +131,49 @@ h2 {
 
 /* ----------MAIN CONTENT-------------*/
 /* ----------Announcement Section-------------*/
-
-.menu-announcement {
-    padding: 10px;
-}
-.menu-announcement p{
-    font-weight: 600;
-    text-align: center;
-}
-
-.menu-announcement ul {
-    list-style-type: disc;
-    padding-left: 50px;
-    font-size: 0.9rem;
-}
-
+/* ----------Monthly Specials Section----------*/
 .new-items {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 10px;
-    justify-items: center;
+    border: solid 1px #EB6789;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#newItems {
+    margin-bottom: 20px;
+    border: 1px solid #5FA79E;
+    display: grid;
+    grid-template-areas:
+        "title"
+        "img description"
+        "img price";
+}
+
+/* -------- Dialog Box -------- */
+dialog {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 20px;
+    border: solid 4px #23324b;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #3f5a2d;
+    color: white;
+    border: none;
+    border-radius: 20px;
 }
 
 /* ----------About Us Section-------------*/

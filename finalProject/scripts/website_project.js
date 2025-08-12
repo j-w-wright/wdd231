@@ -129,7 +129,6 @@ const applicationForm = document.getElementById('application-form');
         
         if (urlParams.toString()) {
             let html = '<p><strong>Here is your submitted information: </strong></p><ul>';
-            
             for (let [key, value] of urlParams.entries()) {
                 const formattedKey = key.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
                 html += `<li><strong>${formattedKey}:</strong> ${value}</li>`;
@@ -140,3 +139,71 @@ const applicationForm = document.getElementById('application-form');
             responseDiv.innerHTML = '<p>No form data received.</p>';
         };
     }
+
+// ------- Display New Menu Items ------- //
+const url = 'data/monthly_specials.json'; // URL to the JSON file
+
+
+function displayNewMenuItems(newItems) {
+    const newItemsContainer = document.querySelector('#newItems');
+    if (newItemsContainer && newItems) {
+        // Clear existing items
+        newItemsContainer.innerHTML = '';
+
+        // Get current month and year
+        const currentDate = new Date();
+        const currentMonth = currentDate.toLocaleString('default', { month: 'long'});
+        const currentYear = currentDate.getFullYear().toString();
+
+        // Filter items for current month and year
+        const currentMonthItems = newItems.filter(item => item.month === currentMonth && item.year === currentYear);
+
+        if (currentMonthItems.length === 0) {
+            newItemsContainer.innerHTML = `<p>No new items available for ${currentMonth} ${currentYear}.</p>`;
+            return; 
+        }
+
+
+        currentMonthItems.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('new-items');
+
+            itemDiv.innerHTML = `
+                <h3>${item.name}</h3>
+                <img src="${item.image}" alt="${item.name} Image">
+                <p>${item.description}</p>
+                <p>${item.price}</p>
+            `;
+
+            newItemsContainer.appendChild(itemDiv);
+        });
+    }
+}
+    
+function loadNewMenuItems() {
+
+    const container = document.querySelector('#newItems');
+    if (!container) {
+        console.log('New items container not found on this page.');
+        return;
+    }
+    // Fetch the new items from the JSON file
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data loaded successfully: ', data);
+            console.log('Current month/year:', new Date().toLocaleDateString('default', { month: 'long' }), new Date().getFullYear());
+            displayNewMenuItems(data.items || data);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            container.innerHTML = '<p>Error loading new menu items. Please try again later.</p>';
+        });
+}
+
+document.addEventListener('DOMContentLoaded', loadNewMenuItems);

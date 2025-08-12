@@ -1,0 +1,58 @@
+{
+    "items": [
+    {
+        "name": "Item 1 Name",
+        "description": "Basic description of item 1",
+        "price": "0.00",
+        "image": "images/item1_image.jpg",
+        "month": "August",
+        "year": "2025"
+    },
+
+    {
+        "name": "Item 2 Name",
+        "description": "Basic description of item 2",
+        "price": "0.00",
+        "image": "images/item2_image.jpg",
+        "month": "August",
+        "year": "2025"
+    },
+
+    {
+        "name": "Item 3 Name",
+        "description": "Basic description of item 3",
+        "price": "0.00",
+        "image": "images/item3_image.jpg",
+        "month": "August",
+        "year": "2025"
+    },
+
+    {
+        "name": "Item 4 Name",
+        "description": "Basic description of item 4",
+        "price": "0.00",
+        "image": "images/item4_image.jpg",
+        "month": "September",
+        "year": "2025"
+    },
+
+    {
+        "name": "Item 5 Name",
+        "description": "Basic description of item 5",
+        "price": "0.00",
+        "image": "images/item5_image.jpg",
+        "month": "September",
+        "year": "2025"
+    },
+
+    {
+        "name": "Item 6 Name",
+        "description": "Basic description of item 6",
+        "price": "0.00",
+        "image": "images/item6_image.jpg",
+        "month": "September",
+        "year": "2025"
+    }
+
+    ]
+}

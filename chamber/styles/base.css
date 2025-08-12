@@ -505,7 +505,6 @@ dialog button {
     border: 1px solid #9fa096;
     background-color: rgb(159, 160, 150, .3);
     border-radius: 10px;
-   /*overflow: hidden;*/
     padding-bottom: 10px;
 
     display: grid;
