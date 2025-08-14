@@ -118,7 +118,7 @@ const applicationForm = document.getElementById('application-form');
                 params.append(key, value);
             }
             
-            window.location.href = `thankyou.html?${params.toString()}`;
+            window.location.href = `thankyou_employment.html?${params.toString()}`;
         });
     }
     
@@ -163,7 +163,6 @@ function displayNewMenuItems(newItems) {
             return; 
         }
 
-
         currentMonthItems.forEach(item => {
             const itemDiv = document.createElement('div');
             itemDiv.classList.add('new-items');
@@ -171,8 +170,8 @@ function displayNewMenuItems(newItems) {
             itemDiv.innerHTML = `
                 <h3>${item.name}</h3>
                 <img src="${item.image}" alt="${item.name} Image">
-                <p>${item.description}</p>
-                <p>${item.price}</p>
+                <p class="description">${item.description}</p>
+                <p class="price">$${item.price}</p>
             `;
 
             newItemsContainer.appendChild(itemDiv);
@@ -207,3 +206,140 @@ function loadNewMenuItems() {
 }
 
 document.addEventListener('DOMContentLoaded', loadNewMenuItems);
+
+
+// ------- Display Menu Items ------- //
+function displayMenuItems(menuItems) {
+    const menuItemsContainer = document.querySelector('#menu-items');
+    if (!menuItemsContainer) return;
+
+    menuItemsContainer.innerHTML = ''; // Clear previous content
+
+    menuItems.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('menu-item');
+
+        itemDiv.innerHTML = `
+            <h3>${item.name}</h3>
+            <img src="${item.image}" alt="${item.name} Image">
+            <button class="view-details">View Details</button>
+        `;
+        
+        // Put this information in a modal for when the button is clicked
+        //   <p class="description">${item.description}</p>
+        //   <p class="price">$${item.price}</p>
+
+        menuItemsContainer.appendChild(itemDiv);
+    });
+}
+
+function loadMenuItems() {
+    const menuItemsContainer = document.querySelector('#menu-items');
+    if (!menuItemsContainer) return;
+
+    fetch('data/menu_items.json')
+        .then(response => response.json())
+        .then(data => {
+            displayMenuItems(data.items || data);
+        })
+        .catch(error => {
+            menuItemsContainer.innerHTML = '<p>Error loading menu items.</p>';
+            console.error(error);
+        });
+}
+
+// Only run on menu.html
+if (window.location.pathname.endsWith('menu.html')) {
+    document.addEventListener('DOMContentLoaded', loadMenuItems);
+}
+
+// ------- Employment Positions Modals ------- //
+
+const openButtonC = document.querySelectorAll('#openButtonC');
+const openButtonT = document.querySelectorAll('#openButtonT');
+const openButtonM = document.querySelectorAll('#openButtonM');
+const dialogBox = document.querySelector('#dialogBox');
+const closeButton = document.querySelector('#closeButton');
+const dialogBoxText = document.querySelector('#dialogBox div');
+
+openButtonC.forEach(button => {
+    button.addEventListener('click', () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Cook</h2>
+        <p>We are looking for a skilled cook to join our team. Responsibilities include cooking menu items, maintaining kitchen cleanliness, and ensuring food safety standards.</p>
+        <p>Requirements: Previous cooking experience, ability to work in a fast-paced environment, and a passion for food.</p>
+        <p>20-30 hours per week, $18/hour.</p>`;
+    });
+});
+
+openButtonT.forEach(button => {
+    button.addEventListener('click', () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Team Member</h2>
+        <p>We are looking for a team member who has a positive attitude, and enjoys working with others.  </p>
+        <p>Requirements: Must be able to work evenings and weekends. </p>
+        <p>15-25 hours per week, $15/hour.</p>`;
+
+    });
+});
+
+openButtonM.forEach(button => {
+    button.addEventListener('click', () => {
+        dialogBox.showModal();
+        dialogBoxText.innerHTML = `<h2>Manager</h2>
+        <p>We are looking for a manager during the evening. </p>
+        <p>Requirements: Must have previous management experience, be able to work evenings and weekends, and have a passion for food.</p>
+        <p>30-40 hours per week, $20/hour.</p>`;
+    });
+});
+
+// Close the dialog box when the close button is clicked
+if (closeButton) {
+    closeButton.addEventListener('click', () => {
+        dialogBox.close();
+    });
+}
+
+function displayMenuItems(menuItems) {
+    const menuItemsContainer = document.querySelector('#menu-items');
+    if (!menuItemsContainer) return;
+
+    menuItemsContainer.innerHTML = ''; // Clear previous content
+
+    menuItems.forEach((item, idx) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('menu-item');
+
+        // Unique modal ID for each item
+        const modalId = `menu-modal-${idx}`;
+
+        itemDiv.innerHTML = `
+            <h3>${item.name}</h3>
+            <img src="${item.image}" alt="${item.name} Image">
+            <button class="view-details" data-modal="${modalId}">View Details</button>
+            <dialog id="${modalId}" class="menu-modal">
+                <div>
+                    <h3>${item.name}</h3>
+                    <img src="${item.image}" alt="${item.name} Image">
+                    <p class="description">${item.description}</p>
+                    <p class="price">$${item.price}</p>
+                    <button class="close-modal">Close</button>
+                </div>
+            </dialog>`;
+
+        menuItemsContainer.appendChild(itemDiv);
+
+        // Add event listeners for modal open/close
+        const viewBtn = itemDiv.querySelector('.view-details');
+        const modal = itemDiv.querySelector('.menu-modal');
+        const closeBtn = itemDiv.querySelector('.close-modal');
+
+        viewBtn.addEventListener('click', () => {
+            modal.showModal();
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.close();
+        });
+    });
+}

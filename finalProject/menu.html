@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Burgers'n Scoops</title>
+        <meta name="description" content="Burgers 'n Scoop website">
+        <meta name="author" content="Jared Wright">
+
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="styles/website_project_small.css">
+        <link rel="stylesheet" href="styles/website_project_medium.css">
+        <link rel="stylesheet" href="styles/website_project_large.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <script src="scripts/website_project.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/Burgers_n_Scoops.png" alt="site logo" width="75">
+            <span class="website-title">Burgers 'n Scoops</span>
+            <button id="ham-btn" class="hamburger" aria-label="Open navigation menu"></button>
+        </header>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li> <!--Wayfinding is using Javascript-->
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="employment.html">Employment</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1 class="menu">The Menu</h1>
+            <div id="menu-items" class="menu-items"></div> <!--Use Javascript to display the menu items-->
+
+        </main>
+        <footer>
+            <div class="physical-address">
+                <p class="name">Burgers 'n Scoops</p>
+                <p>XXX South Main Street, Brigham City, UT 84302</p>
+                <p>435.723.XXXX</p>
+                <p>firstname@domain.com</p>
+            </div>
+<!--Social Media Icons and Links-->
+            <div class="social">
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="images/youtube.svg" alt="Youtube" width="40">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="images/facebook.svg" alt="Facebook" width="40">
+                </a>
+                <a href="https://www.x.com" target="_blank">
+                    <img src="images/twitter_x.svg" alt="X, formerly Twitter" width="40">
+                </a>              
+            </div>
+            <div class="copyright">
+                <p>WDD 231 Website Project | Jared Wright</p>
+<!--Copyright and Last Modified-->
+                <p>&#169; <span id="currentYear"></span> Burgers 'n Scoops</p>
+                <p>Last modified: <span id="lastModified"></span></p> <!--will be populated dynamically with JavaScript-->
+            </div>
+        </footer>
+    </body>
+</html>

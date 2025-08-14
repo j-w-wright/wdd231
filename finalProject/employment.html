@@ -34,13 +34,27 @@
         </nav>
         <main>
             <h1 class="employment-title">Employment Opportunities</h1>
+            <p class="hiring-call">We are <strong>currently hiring</strong> for the following positions:</p>
             <div class="employment-info">
-                <p>We are currently hiring for the following positions:</p>
-                <ul>
-                    <li>Cook</li>
-                    <li>Cashier</li>
-                </ul>
+                <div class="employment-position">
+                <h3>Cook</h3>
+                <button id="openButtonC">Job Responsibilities</button> <!--Button to open modal with more information-->
+                </div>
+                <div class="employment-position">
+                <h3>Team Member</h3>
+                <button id="openButtonT">Job Responsibilities</button> <!--Button to open modal with more information-->
+                </div>
+                <div class="employment-position">
+                <h3>Manager</h3>
+                <button id="openButtonM">Job Responsibilities</button> <!--Button to open modal with more information-->
+                </div>
             </div>
+
+            <dialog id="dialogBox">
+                <div></div> <!--This will be populated with the job details using JS-->
+                <button id="closeButton" class="close-button">Close</button>
+            </dialog>
+
             <div id="visit-message" class="visit-tracker"></div> <!--This will be populated with the visit message-->
             <p class="application-info">To apply, please fill out the application form below.</p>
             <form id="application-form" action="thankyou_employment.html" method="get">
@@ -68,7 +82,7 @@
                     <label for="resume">Resume (optional):</label>
                     <input type="file" id="resume" name="resume">
                 </fieldset>
-                <button type="submit">Submit Application</button>
+                <button type="submit">Send Application</button>
             </form>
 
         </main>

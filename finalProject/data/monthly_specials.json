@@ -1,28 +1,28 @@
 {
     "items": [
     {
-        "name": "Item 1 Name",
-        "description": "Basic description of item 1",
-        "price": "0.00",
-        "image": "images/item1_image.jpg",
+        "name": "Fresh Peach Shake",
+        "description": "A fresh and creamy peach shake made with real peaches, vanilla ice cream, and a hint of cinnamon. Perfect for cooling down on a hot summer day.",
+        "price": "4.99",
+        "image": "images/fresh_peach_shake.webp",
         "month": "August",
         "year": "2025"
     },
 
     {
-        "name": "Item 2 Name",
-        "description": "Basic description of item 2",
-        "price": "0.00",
-        "image": "images/item2_image.jpg",
+        "name": "Double Bacon Cheeseburger Combo",
+        "description": "A hearty burger with two beef patties, two slices of melted cheese, and several strips of bacon.  Served with your choice of regular or waffle fries and a fountain drink.",
+        "price": "12.29",
+        "image": "images/bacon_cheese_combo.webp",
         "month": "August",
         "year": "2025"
     },
 
     {
-        "name": "Item 3 Name",
-        "description": "Basic description of item 3",
-        "price": "0.00",
-        "image": "images/item3_image.jpg",
+        "name": "Pepperoni Pizza Pocket Combo",
+        "description": "Delicious hot pizza pockets filled with pepperoni, mozzarella cheese, and a rich tomato sauce.  Served with your choice of regular or waffle fries and a fountain drink.",
+        "price": "3.99",
+        "image": "images/pizza_pocket_combo.webp",
         "month": "August",
         "year": "2025"
     },

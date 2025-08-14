@@ -26,14 +26,49 @@
         </header>
         <nav id="nav-bar" class="navigation">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li> <!--Wayfinding is using Javascript-->
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="employment.html">Employment</a></li>
             </ul>
         </nav>
         <main>
-            
+            <h1 class="contact-us">Contact Us</h1>
+            <div class="contact-options">
+                <p>We would love to hear from you!</p>
+                <p>In the form below, you can send us a message with any feedback or questions, or you can leave a SHOUT OUT about an employee.</p>
+                <p>*If you want a response please leave your email or phone number.  We will work hard to respond within 48 hours.</p>
+            </div>
+            <form id="contact-form" action="thankyou_contact.html" method="get">
+                <fieldset>   
+                    <legend>Contact Us</legend>
+
+                    <label for="firstname">First Name:
+                    <input type="text" id="firstname" name="firstname"></label>
+
+                    <label for="lastname">Last Name:
+                    <input type="text" id="lastname" name="lastname"></label>
+
+                    <label for="email">Email:
+                    <input type="email" id="email" name="email" autocomplete="email" title="Enter your email address" placeholder="example@domain.com"></label>
+
+                    <label for="phone">Phone:
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" title="Enter your phone number" placeholder="(123) 456-7890"></label>
+
+                    <label for="category">
+                    <select id="category" name="category">
+                        <option value="feedback">Feedback</option>
+                        <option value="question">Question</option>
+                        <option value="shoutout">Shout Out</option>
+                    </select></label>
+
+                    <label for="message">Message:
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
+                    </label>
+                </fieldset>
+                <button type="submit">Send Your Message</button>
+            </form>
+
         </main>
         <footer>
             <div class="physical-address">

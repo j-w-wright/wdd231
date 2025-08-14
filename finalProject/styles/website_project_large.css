@@ -18,14 +18,51 @@
     grid-template-columns: 2fr 1fr;
 }
 
+.announcements h2 {
+    padding: 10px;
+    font-size: 2rem;
+}
+
 .reviews {
-    border: 1px solid #5FA79E;
+    border-left: 9px solid #5FA79E;
 }
 
-.about {
-    border: 1px solid #5FA79E;
+.reviews h2 {
+    margin: 0;
+    padding: 10px;
+    font-size: 2rem;
+}
+.review-content {
+    font-size: 1.2rem;
+    padding: 15px;
 }
 
+.about h2 {
+    margin: 0;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+/* ----------Monthly Specials Section----------*/
+.new-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.new-items img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.new-items img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
 
 
 /* ------- Call to Action -------- */
@@ -39,6 +76,102 @@
     font-size: 2rem;
     width: 600px;
     padding: 10px 20px;
+}
+
+/* --------Employment Opportunities--------- */
+.employment-position {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+
+.employment-position h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.employment-position button {
+    width: 100%;
+}
+
+.employment-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+}
+
+.hiring-call {
+    text-align: center;;
+}
+
+
+/* -------- Dialog Box -------- */
+dialog {
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 20px;
+    border: solid 4px #23324b;
+    width: 600px;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #5FA79E;
+    border: none;
+    border-radius: 20px;
+}
+
+/* ----------Menu Section-------------*/
+.menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+.menu-items div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "name"
+        "button"
+        "image";
+    border: solid 1px #3f5a2d;
+    border-radius: 10px;
+}
+
+.menu-items img {
+    border-radius: 10px;
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.menu-items img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.menu-items p {
+    padding-right: 10px;
+}
+
+.menu-items button {
+    width: 100%;
 }
 
 }

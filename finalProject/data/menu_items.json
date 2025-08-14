@@ -1,0 +1,52 @@
+{
+    "items": [
+    {
+        "name": "Hamburger",
+        "image": "images/menu_placeholder.webp",
+        "description": "A classic hamburger with a juicy beef patty, lettuce, tomato, pickles, and your choice of condiments. Served on a toasted bun.",
+        "price": "8.99"
+    },
+
+    {
+        "name": "Cheeseburger",
+        "image": "images/menu_placeholder.webp",
+        "description": "A classic burger with a juicy beef patty, a slice of cheese, lettuce, tomato, pickles, and your choice of condiments. Served on a toasted bun.",
+        "price": "9.50"
+    },
+
+    {
+        "name": "Veggie Burger",
+        "image": "images/menu_placeholder.webp",
+        "description": "A delicious veggie burger made with a blend of vegetables and spices, topped with lettuce, tomato, pickles, and your choice of condiments. Served on a toasted bun.",
+        "price": "7.99"
+    },
+
+    {
+        "name": "Rodeo Burger",
+        "image": "images/menu_placeholder.webp",
+        "description": "A classic hamburger with a juicy beef patty, a giant onion, lettuce, tomato, pickles, and your choice of condiments. Served on a toasted bun.",
+        "price": "9.99"
+    },
+
+    {
+        "name": "Chicken Sandwich",
+        "image": "images/menu_placeholder.webp",
+        "description": "A crispy chicken sandwich with a breaded chicken breast, lettuce, tomato, pickles, and your choice of condiments. Served on a toasted bun.",
+        "price": "8.99"
+    },
+
+    {
+        "name": "Chicken Malibu Sandwich",
+        "image": "images/menu_placeholder.webp",
+        "description": "A grilled chicken sandwich with a juicy chicken breast, a slice of Swiss cheese, a thin slice of ham, lettuce, tomato, pickles, and your choice of condiments. Served on a toasted bun.",
+        "price": "10.50"
+    },
+
+    {
+        "name": "Grilled Cheese Sandwich",
+        "image": "images/menu_placeholder.webp",
+        "description": "A classic grilled cheese sandwich with melted cheese between two slices of toasted bread. Served with a side of fries.",
+        "price": "5.99"
+    }
+    ]
+}

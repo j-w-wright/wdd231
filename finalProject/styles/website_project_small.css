@@ -131,6 +131,13 @@ h2 {
 
 /* ----------MAIN CONTENT-------------*/
 /* ----------Announcement Section-------------*/
+
+.menu-announcement h3 {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+
 /* ----------Monthly Specials Section----------*/
 .new-items {
     display: flex;
