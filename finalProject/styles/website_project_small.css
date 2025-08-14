@@ -419,6 +419,11 @@ footer .name {
     padding-bottom: 10px;
 }
 
+.copyright a {
+    color: white;
+    text-decoration: none;
+}
+
 .social {
     display: flex;
     justify-content: center;
