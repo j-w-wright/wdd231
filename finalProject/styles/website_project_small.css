@@ -187,7 +187,7 @@ h2 {
 
 
 /* -------- Dialog Box -------- */
-dialog, .menu-modal {
+dialog {
     font-size: 1.2rem;
     border-radius: 10px;
     padding: 20px;
@@ -198,7 +198,7 @@ dialog, .menu-modal {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-dialog button, .menu-modal button {
+dialog button {
     display: block;
     margin: 10px auto 0;
     padding: 10px 20px;
@@ -245,7 +245,7 @@ dialog button, .menu-modal button {
         "image"
         ;
     gap: 20px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .menu-items img {
@@ -254,12 +254,13 @@ dialog button, .menu-modal button {
     height: auto;
     justify-self: center;
     padding: 10px;
-    grid-name: image;
+    grid-area: image;
 }   
 
 .menu-items h3 {
     font-size: 1.3rem;
     text-align: center;
+    grid-area: name;
 }
 
 .menu-items button {
@@ -268,68 +269,20 @@ dialog button, .menu-modal button {
     font-size: 1.2rem;
     border: none;
     border-radius: 20px;
+    grid-area: button;
 }
 
 /* --------Modals for the menu items-------- */
-.menu-modal > div{
-    display: grid;
-    grid-template-areas: 
-        "name name"
-        "image description"
-        "price price price"
-        "close close close";
-    grid-template-columns: 1fr 2fr;
-    gap: 10px;
-    align-items: center;
-    padding: 20px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    border: solid 4px #23324b;
-}
-
-.menu-modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+.menu-modal p {
+    padding-left: 10px;
 }
 
 .menu-modal h3 {
-    grid-area: name;
     font-size: 1.5rem;
-    text-align: center;
-}
-
-.menu-modal img {
-    grid-area: image;
-    width: 100px;
-    height: auto;
-    border-radius: 10px;
-    justify-self: end;
-}
-
-.menu-modal .description {
-    grid-area: description;
-    text-align: left;
-    margin-bottom: 0;
 }
 
 .menu-modal .price {
-    grid-area: price;
-    font-size: 1.5rem;
     text-align: center;
-    margin: 0;
-    padding: 10px 0;
-}
-
-.menu-modal .close-modal {
-    display: block;
-    justify-self: center;
-    align-self:last baseline;
-    grid-area: close;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #5FA79E;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
 }
 
 /* ----------About Us Section-------------*/

@@ -209,29 +209,29 @@ document.addEventListener('DOMContentLoaded', loadNewMenuItems);
 
 
 // ------- Display Menu Items ------- //
-function displayMenuItems(menuItems) {
-    const menuItemsContainer = document.querySelector('#menu-items');
-    if (!menuItemsContainer) return;
-
-    menuItemsContainer.innerHTML = ''; // Clear previous content
-
-    menuItems.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('menu-item');
-
-        itemDiv.innerHTML = `
-            <h3>${item.name}</h3>
-            <img src="${item.image}" alt="${item.name} Image">
-            <button class="view-details">View Details</button>
-        `;
+//function displayMenuItems(menuItems) {
+//    const menuItemsContainer = document.querySelector('#menu-items');
+//    if (!menuItemsContainer) return;
+//
+//    menuItemsContainer.innerHTML = ''; // Clear previous content
+//
+//    menuItems.forEach(item => {
+//        const itemDiv = document.createElement('div');
+//        itemDiv.classList.add('menu-item');
+//
+//        itemDiv.innerHTML = `
+//            <h3>${item.name}</h3>
+//            <img src="${item.image}" alt="${item.name} Image">
+//            <button class="view-details">View Details</button>
+//        `;
         
         // Put this information in a modal for when the button is clicked
         //   <p class="description">${item.description}</p>
         //   <p class="price">$${item.price}</p>
 
-        menuItemsContainer.appendChild(itemDiv);
-    });
-}
+//       menuItemsContainer.appendChild(itemDiv);
+  //  });
+//}
 
 function loadMenuItems() {
     const menuItemsContainer = document.querySelector('#menu-items');
