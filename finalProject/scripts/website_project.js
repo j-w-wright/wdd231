@@ -143,109 +143,86 @@ const applicationForm = document.getElementById('application-form');
 // ------- Display New Menu Items ------- //
 const url = 'data/monthly_specials.json'; // URL to the JSON file
 
-
 function displayNewMenuItems(newItems) {
-    const newItemsContainer = document.querySelector('#newItems');
-    if (newItemsContainer && newItems) {
-        // Clear existing items
-        newItemsContainer.innerHTML = '';
+    try {
+        const newItemsContainer = document.querySelector('#newItems');
+        if (newItemsContainer && newItems) {
+            // Clear existing items
+            newItemsContainer.innerHTML = '';
 
-        // Get current month and year
-        const currentDate = new Date();
-        const currentMonth = currentDate.toLocaleString('default', { month: 'long'});
-        const currentYear = currentDate.getFullYear().toString();
+            // Get current month and year
+            const currentDate = new Date();
+            const currentMonth = currentDate.toLocaleString('default', { month: 'long'});
+            const currentYear = currentDate.getFullYear().toString();
 
-        // Filter items for current month and year
-        const currentMonthItems = newItems.filter(item => item.month === currentMonth && item.year === currentYear);
+            // Filter items for current month and year
+            const currentMonthItems = newItems.filter(item => item.month === currentMonth && item.year === currentYear);
 
-        if (currentMonthItems.length === 0) {
-            newItemsContainer.innerHTML = `<p>No new items available for ${currentMonth} ${currentYear}.</p>`;
-            return; 
+            if (currentMonthItems.length === 0) {
+                newItemsContainer.innerHTML = `<p>No new items available for ${currentMonth} ${currentYear}.</p>`;
+                return; 
+            }
+
+            currentMonthItems.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('new-items');
+
+                itemDiv.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <img src="${item.image}" alt="${item.name} Image">
+                    <p class="description">${item.description}</p>
+                    <p class="price">$${item.price}</p>
+                `;
+
+                newItemsContainer.appendChild(itemDiv);
+            });
         }
-
-        currentMonthItems.forEach(item => {
-            const itemDiv = document.createElement('div');
-            itemDiv.classList.add('new-items');
-
-            itemDiv.innerHTML = `
-                <h3>${item.name}</h3>
-                <img src="${item.image}" alt="${item.name} Image">
-                <p class="description">${item.description}</p>
-                <p class="price">$${item.price}</p>
-            `;
-
-            newItemsContainer.appendChild(itemDiv);
-        });
+    } catch (error) {
+        console.error('Error displaying new menu items:', error);
+        const newItemsContainer = document.querySelector('#newItems');
+        if (newItemsContainer) {
+            newItemsContainer.innerHTML = '<p>Error displaying new menu items.</p>';
+        }
     }
 }
     
-function loadNewMenuItems() {
+async function loadNewMenuItems() {
 
     const container = document.querySelector('#newItems');
     if (!container) {
         console.log('New items container not found on this page.');
         return;
     }
-    // Fetch the new items from the JSON file
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Data loaded successfully: ', data);
-            console.log('Current month/year:', new Date().toLocaleDateString('default', { month: 'long' }), new Date().getFullYear());
-            displayNewMenuItems(data.items || data);
-        })
-        .catch(error => {
+
+    try {
+        const resopnse = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log('Data loaded successfully:', data);
+        console.log('Current month/year:', new Date().toLocaleDateString('default', { month: 'long' }), new Date().getFullYear());
+        displayNewMenuItems(data.items || data);
+        } catch(error) {
             console.error('There was a problem with the fetch operation:', error);
             container.innerHTML = '<p>Error loading new menu items. Please try again later.</p>';
-        });
+        }
 }
 
 document.addEventListener('DOMContentLoaded', loadNewMenuItems);
 
-
-// ------- Display Menu Items ------- //
-//function displayMenuItems(menuItems) {
-//    const menuItemsContainer = document.querySelector('#menu-items');
-//    if (!menuItemsContainer) return;
-//
-//    menuItemsContainer.innerHTML = ''; // Clear previous content
-//
-//    menuItems.forEach(item => {
-//        const itemDiv = document.createElement('div');
-//        itemDiv.classList.add('menu-item');
-//
-//        itemDiv.innerHTML = `
-//            <h3>${item.name}</h3>
-//            <img src="${item.image}" alt="${item.name} Image">
-//            <button class="view-details">View Details</button>
-//        `;
-        
-        // Put this information in a modal for when the button is clicked
-        //   <p class="description">${item.description}</p>
-        //   <p class="price">$${item.price}</p>
-
-//       menuItemsContainer.appendChild(itemDiv);
-  //  });
-//}
-
-function loadMenuItems() {
+async function loadMenuItems() {
     const menuItemsContainer = document.querySelector('#menu-items');
     if (!menuItemsContainer) return;
 
-    fetch('data/menu_items.json')
-        .then(response => response.json())
-        .then(data => {
-            displayMenuItems(data.items || data);
-        })
-        .catch(error => {
+    try {
+        const response = await fetch('data/menu_items.json');
+        const data = await response.json();
+        displayMenuItems(data.items || data);
+    } catch(error) {
             menuItemsContainer.innerHTML = '<p>Error loading menu items.</p>';
             console.error(error);
-        });
+        }
 }
 
 // Only run on menu.html
