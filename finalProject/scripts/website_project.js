@@ -195,7 +195,7 @@ async function loadNewMenuItems() {
     }
 
     try {
-        const resopnse = await fetch(url);
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
